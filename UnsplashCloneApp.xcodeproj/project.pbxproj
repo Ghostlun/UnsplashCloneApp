@@ -3,27 +3,67 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96D11A8C8CD3C76576D3A814 /* Pods_UnsplashCloneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B12E671CD450B2031844040 /* Pods_UnsplashCloneApp.framework */; };
 		D909C7A12642BA2500713750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C7A02642BA2500713750 /* AppDelegate.swift */; };
 		D909C7A32642BA2500713750 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C7A22642BA2500713750 /* SceneDelegate.swift */; };
-		D909C7A52642BA2500713750 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C7A42642BA2500713750 /* ViewController.swift */; };
+		D909C7A52642BA2500713750 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C7A42642BA2500713750 /* MainListViewController.swift */; };
 		D909C7A82642BA2500713750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D909C7A62642BA2500713750 /* Main.storyboard */; };
 		D909C7AA2642BA2700713750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D909C7A92642BA2700713750 /* Assets.xcassets */; };
 		D909C7AD2642BA2700713750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D909C7AB2642BA2700713750 /* LaunchScreen.storyboard */; };
+		D909C7BF2642F50600713750 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C7BE2642F50500713750 /* SplashModel.swift */; };
+		D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647B264590E40047707E /* MainListViewModel.swift */; };
+		D9B3647E264592020047707E /* SplashTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647D264592020047707E /* SplashTableCellViewModel.swift */; };
+		D9B3647F2645951D0047707E /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3646F264588D40047707E /* ParameterEncoder.swift */; };
+		D9B364802645951F0047707E /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B36470264588D40047707E /* URLParameterEncoder.swift */; };
+		D9B36481264595230047707E /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B36471264588D40047707E /* JSONParameterEncoder.swift */; };
+		D9B36482264595270047707E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B36473264588D40047707E /* NetworkManager.swift */; };
+		D9B36483264595290047707E /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B36475264588D40047707E /* HTTPTask.swift */; };
+		D9B364842645952C0047707E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B36476264588D40047707E /* HTTPMethod.swift */; };
+		D9B364852645952F0047707E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B36477264588D40047707E /* Router.swift */; };
+		D9B36486264595330047707E /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B36478264588D40047707E /* EndPointType.swift */; };
+		D9DBFAAC26459C2D00BFB61B /* CellReusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFAAB26459C2D00BFB61B /* CellReusable+Extension.swift */; };
+		D9DBFAAD26459CF200BFB61B /* SplashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3646B264588460047707E /* SplashTableViewCell.swift */; };
+		D9DBFAAE2645A70000BFB61B /* SplashTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B3646A264588460047707E /* SplashTableViewCell.xib */; };
+		D9DBFAB12645B63000BFB61B /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFAB02645B63000BFB61B /* AppError.swift */; };
+		D9DBFAB52645CD4500BFB61B /* SplashApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFAB42645CD4500BFB61B /* SplashApi.swift */; };
+		D9DBFAB92645D10E00BFB61B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFAB82645D10E00BFB61B /* CollectionViewCell.swift */; };
+		D9DBFAC32645E02700BFB61B /* ImageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFAC22645E02700BFB61B /* ImageScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13B9AD868D1FA91155746D3F /* Pods-UnsplashCloneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashCloneApp.debug.xcconfig"; path = "Target Support Files/Pods-UnsplashCloneApp/Pods-UnsplashCloneApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6B12E671CD450B2031844040 /* Pods_UnsplashCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnsplashCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90BCD90801E7F05FF59AB208 /* Pods-UnsplashCloneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashCloneApp.release.xcconfig"; path = "Target Support Files/Pods-UnsplashCloneApp/Pods-UnsplashCloneApp.release.xcconfig"; sourceTree = "<group>"; };
 		D909C79D2642BA2500713750 /* UnsplashCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D909C7A02642BA2500713750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D909C7A22642BA2500713750 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D909C7A42642BA2500713750 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D909C7A42642BA2500713750 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 		D909C7A72642BA2500713750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D909C7A92642BA2700713750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D909C7AC2642BA2700713750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D909C7AE2642BA2700713750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D909C7BE2642F50500713750 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
+		D9B3646A264588460047707E /* SplashTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashTableViewCell.xib; sourceTree = "<group>"; };
+		D9B3646B264588460047707E /* SplashTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTableViewCell.swift; sourceTree = "<group>"; };
+		D9B3646F264588D40047707E /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
+		D9B36470264588D40047707E /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		D9B36471264588D40047707E /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		D9B36473264588D40047707E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D9B36475264588D40047707E /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		D9B36476264588D40047707E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		D9B36477264588D40047707E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D9B36478264588D40047707E /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		D9B3647B264590E40047707E /* MainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewModel.swift; sourceTree = "<group>"; };
+		D9B3647D264592020047707E /* SplashTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTableCellViewModel.swift; sourceTree = "<group>"; };
+		D9DBFAAB26459C2D00BFB61B /* CellReusable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CellReusable+Extension.swift"; sourceTree = "<group>"; };
+		D9DBFAB02645B63000BFB61B /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		D9DBFAB42645CD4500BFB61B /* SplashApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashApi.swift; sourceTree = "<group>"; };
+		D9DBFAB82645D10E00BFB61B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D9DBFAC22645E02700BFB61B /* ImageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +71,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D11A8C8CD3C76576D3A814 /* Pods_UnsplashCloneApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		668E2D36405339A1FB154BA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				13B9AD868D1FA91155746D3F /* Pods-UnsplashCloneApp.debug.xcconfig */,
+				90BCD90801E7F05FF59AB208 /* Pods-UnsplashCloneApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8B3D42ED93CEF8F00C9DBBC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B12E671CD450B2031844040 /* Pods_UnsplashCloneApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D909C7942642BA2500713750 = {
 			isa = PBXGroup;
 			children = (
 				D909C79F2642BA2500713750 /* UnsplashCloneApp */,
 				D909C79E2642BA2500713750 /* Products */,
+				668E2D36405339A1FB154BA7 /* Pods */,
+				8B3D42ED93CEF8F00C9DBBC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +137,7 @@
 		D909C7B52642BA3B00713750 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D9B3646C264588860047707E /* Reusuable Components */,
 				D909C7B72642BA5700713750 /* MainScreen */,
 			);
 			path = Modules;
@@ -94,6 +155,11 @@
 		D909C7B72642BA5700713750 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				D9DBFAC12645DFD800BFB61B /* ImageScreen */,
+				D9B36467264588390047707E /* EndPoint */,
+				D909C7BC2642F47E00713750 /* ViewModel */,
+				D909C7BB2642F47700713750 /* Model */,
+				D909C7BA2642F47200713750 /* View */,
 				D909C7B82642BA6500713750 /* Controller */,
 			);
 			path = MainScreen;
@@ -102,7 +168,7 @@
 		D909C7B82642BA6500713750 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D909C7A42642BA2500713750 /* ViewController.swift */,
+				D909C7A42642BA2500713750 /* MainListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +181,130 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D909C7BA2642F47200713750 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBFAB72645D0FB00BFB61B /* CollectionViewCell */,
+				D9B36469264588460047707E /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D909C7BB2642F47700713750 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D909C7BE2642F50500713750 /* SplashModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D909C7BC2642F47E00713750 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9B3647A26458F640047707E /* TableCellViewModel */,
+				D9B3647926458F5B0047707E /* MainListViewModel */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D9B36467264588390047707E /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBFAB42645CD4500BFB61B /* SplashApi.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		D9B36469264588460047707E /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D9B3646A264588460047707E /* SplashTableViewCell.xib */,
+				D9B3646B264588460047707E /* SplashTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		D9B3646C264588860047707E /* Reusuable Components */ = {
+			isa = PBXGroup;
+			children = (
+				D9B3646D264588D40047707E /* NetworkLayer */,
+				D9DBFAAB26459C2D00BFB61B /* CellReusable+Extension.swift */,
+				D9DBFAB02645B63000BFB61B /* AppError.swift */,
+			);
+			path = "Reusuable Components";
+			sourceTree = "<group>";
+		};
+		D9B3646D264588D40047707E /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D9B3646E264588D40047707E /* Encoding */,
+				D9B36472264588D40047707E /* Manager */,
+				D9B36474264588D40047707E /* Service */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		D9B3646E264588D40047707E /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				D9B3646F264588D40047707E /* ParameterEncoder.swift */,
+				D9B36470264588D40047707E /* URLParameterEncoder.swift */,
+				D9B36471264588D40047707E /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		D9B36472264588D40047707E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D9B36473264588D40047707E /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		D9B36474264588D40047707E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D9B36475264588D40047707E /* HTTPTask.swift */,
+				D9B36476264588D40047707E /* HTTPMethod.swift */,
+				D9B36477264588D40047707E /* Router.swift */,
+				D9B36478264588D40047707E /* EndPointType.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D9B3647926458F5B0047707E /* MainListViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9B3647B264590E40047707E /* MainListViewModel.swift */,
+			);
+			path = MainListViewModel;
+			sourceTree = "<group>";
+		};
+		D9B3647A26458F640047707E /* TableCellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9B3647D264592020047707E /* SplashTableCellViewModel.swift */,
+			);
+			path = TableCellViewModel;
+			sourceTree = "<group>";
+		};
+		D9DBFAB72645D0FB00BFB61B /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBFAB82645D10E00BFB61B /* CollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		D9DBFAC12645DFD800BFB61B /* ImageScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBFAC22645E02700BFB61B /* ImageScreen.swift */,
+			);
+			path = ImageScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +312,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D909C7B12642BA2700713750 /* Build configuration list for PBXNativeTarget "UnsplashCloneApp" */;
 			buildPhases = (
+				B6558B7D26210E08750EC7B1 /* [CP] Check Pods Manifest.lock */,
 				D909C7992642BA2500713750 /* Sources */,
 				D909C79A2642BA2500713750 /* Frameworks */,
 				D909C79B2642BA2500713750 /* Resources */,
+				9A63186C1C4CF085B1184343 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -174,20 +366,80 @@
 			files = (
 				D909C7AD2642BA2700713750 /* LaunchScreen.storyboard in Resources */,
 				D909C7AA2642BA2700713750 /* Assets.xcassets in Resources */,
+				D9DBFAAE2645A70000BFB61B /* SplashTableViewCell.xib in Resources */,
 				D909C7A82642BA2500713750 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9A63186C1C4CF085B1184343 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnsplashCloneApp/Pods-UnsplashCloneApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnsplashCloneApp/Pods-UnsplashCloneApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnsplashCloneApp/Pods-UnsplashCloneApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6558B7D26210E08750EC7B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnsplashCloneApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D909C7992642BA2500713750 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D909C7A52642BA2500713750 /* ViewController.swift in Sources */,
+				D9B364802645951F0047707E /* URLParameterEncoder.swift in Sources */,
+				D909C7A52642BA2500713750 /* MainListViewController.swift in Sources */,
+				D9DBFAB12645B63000BFB61B /* AppError.swift in Sources */,
+				D9DBFAAC26459C2D00BFB61B /* CellReusable+Extension.swift in Sources */,
+				D9B36482264595270047707E /* NetworkManager.swift in Sources */,
 				D909C7A12642BA2500713750 /* AppDelegate.swift in Sources */,
+				D9DBFAAD26459CF200BFB61B /* SplashTableViewCell.swift in Sources */,
+				D909C7BF2642F50600713750 /* SplashModel.swift in Sources */,
 				D909C7A32642BA2500713750 /* SceneDelegate.swift in Sources */,
+				D9B36486264595330047707E /* EndPointType.swift in Sources */,
+				D9DBFAB92645D10E00BFB61B /* CollectionViewCell.swift in Sources */,
+				D9B36481264595230047707E /* JSONParameterEncoder.swift in Sources */,
+				D9B36483264595290047707E /* HTTPTask.swift in Sources */,
+				D9B364842645952C0047707E /* HTTPMethod.swift in Sources */,
+				D9B3647E264592020047707E /* SplashTableCellViewModel.swift in Sources */,
+				D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */,
+				D9B3647F2645951D0047707E /* ParameterEncoder.swift in Sources */,
+				D9B364852645952F0047707E /* Router.swift in Sources */,
+				D9DBFAB52645CD4500BFB61B /* SplashApi.swift in Sources */,
+				D9DBFAC32645E02700BFB61B /* ImageScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +583,7 @@
 		};
 		D909C7B22642BA2700713750 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B9AD868D1FA91155746D3F /* Pods-UnsplashCloneApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -349,6 +602,7 @@
 		};
 		D909C7B32642BA2700713750 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90BCD90801E7F05FF59AB208 /* Pods-UnsplashCloneApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
