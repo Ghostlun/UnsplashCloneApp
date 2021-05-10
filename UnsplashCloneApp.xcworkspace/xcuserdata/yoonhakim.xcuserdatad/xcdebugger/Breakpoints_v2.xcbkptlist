@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CDAF0420-DFDA-4CA0-98E2-3431189B87E2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UnsplashCloneApp/Modules/Reusuable Components/NetworkLayer/Manager/NetworkManager.swift"
@@ -16,7 +16,87 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "getSplashInformation(completion:)"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F791DB46-0376-4C8E-9493-EE05E17F56B5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnsplashCloneApp/Modules/Reusuable Components/NetworkLayer/Service/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "request(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F791DB46-0376-4C8E-9493-EE05E17F56B5 - 4a48d89e1913c727"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnsplashCloneApp.Router.request&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(_: UnsplashCloneApp.EndPoint, completion: (Swift.Result&lt;&#x3c4;_1_0, UnsplashCloneApp.AppError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "UnsplashCloneApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yoonhakim/Desktop/App_training/Working/UnsplashCloneApp/UnsplashCloneApp/Modules/Reusuable%20Components/NetworkLayer/Service/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "420">
+               </Location>
+               <Location
+                  uuid = "F791DB46-0376-4C8E-9493-EE05E17F56B5 - e11181186ef47490"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in UnsplashCloneApp.Router.request&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(_: UnsplashCloneApp.EndPoint, completion: (Swift.Result&lt;&#x3c4;_1_0, UnsplashCloneApp.AppError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "UnsplashCloneApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yoonhakim/Desktop/App_training/Working/UnsplashCloneApp/UnsplashCloneApp/Modules/Reusuable%20Components/NetworkLayer/Service/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "526">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "368E37E3-84DB-4998-AE33-BF97C08206EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnsplashCloneApp/Modules/Reusuable Components/NetworkLayer/Service/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "request(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E887B70-8A61-4211-A1FA-D60826A43872"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnsplashCloneApp/Modules/Reusuable Components/NetworkLayer/Service/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "request(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

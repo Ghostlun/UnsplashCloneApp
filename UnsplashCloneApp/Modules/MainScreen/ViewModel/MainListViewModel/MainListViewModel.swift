@@ -14,6 +14,8 @@ protocol MainViewModelProtocol: AnyObject {
 
 class MainListViewModel {
     
+    private let router = Router<SplashCollectionApi>()
+    
     weak var delegate: MainViewModelProtocol?
     
     var collectionViewDataSource: [String] = ["Editorial", "Wallpapers", "Nature", "People", "Architecture", "Current Events", "Businnes & work", "Experimental", "Fashion", "Film", "Health & Wellness", "Interiors", "Street Photography", "Technology", "Travel", "Textures & Patterns", "Animals", "Food & Drink", "Athletics"]
@@ -46,16 +48,19 @@ class MainListViewModel {
     }
     
     
-    func fetchModel() {
-        let networkManger = NetworkManager()
-        networkManger.getSplashInformation { [weak self] splashDatas, _ in
-            guard splashDatas != nil else { return }
-            let compactedData = splashDatas?.compactMap {
-                SplashCellViewModel(splashModel: $0)
+    func fetchPhotoDetails() {
+        self.router.request(SplashCollectionApi.collection) { [weak self] (result: Result<SplashModels, AppError>) in
+            switch result {
+            case .success(let splashData):
+                let compactedData = splashData.compactMap {
+                                SplashCellViewModel(splashModel: $0)
+                            }
+    
+                self?.dataSource = compactedData
+            case .failure(let error):
+                print(error)
             }
-            guard let unwrappedCompactedData = compactedData else { return }
-            guard let self = self else { return }
-            self.dataSource = unwrappedCompactedData
         }
     }
+
 }

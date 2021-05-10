@@ -29,7 +29,7 @@ class MainListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Unsplash"
-        mainListViewModel.fetchModel()
+        mainListViewModel.fetchPhotoDetails()
     }
     
     

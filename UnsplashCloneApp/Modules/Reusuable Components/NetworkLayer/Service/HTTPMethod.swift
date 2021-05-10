@@ -3,7 +3,7 @@
 //  MapHomework
 //
 //  Created by Yoonha Kim on 4/26/21.
-//
+//  checked
 
 import Foundation
 

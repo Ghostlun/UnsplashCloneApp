@@ -3,33 +3,62 @@
 //  MapHomework
 //
 //  Created by Yoonha Kim on 4/26/21.
-//
+//  Updated router
 
 import Foundation
 import UIKit
 
-typealias NetworkRouterCompletion = (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void
+typealias NetworkRouterCompletion<T> = (Result<T, AppError>) -> Void
 
 protocol NetworkRouter: AnyObject {
-    associatedtype EndPoint: EndPointType
-    func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion)
+    func request<T: Decodable>(_ route: EndPoint, completion: @escaping NetworkRouterCompletion<T>)
     func cancel()
 }
 
-class Router<EndPoint: EndPointType>: NetworkRouter {
+class Router<U: EndPoint>: NetworkRouter {
+    private let session = URLSession(configuration: .default)
     private var task: URLSessionTask?
     
-    func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion) {
-        do {
-            let request = try self.buildRequest(from: route)
-            
-            task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in completion(data, response, error)
-            })
-        } catch {
-            completion(nil, nil, error)
+    func request<T: Decodable>(_ route: EndPoint, completion: @escaping NetworkRouterCompletion<T>) {
+            do {
+                let request = try self.buildRequest(from: route)
+                task = session.dataTask(with: request) { data, response, error in
+                    let completionOnMain: (Result<T, AppError>) -> Void = { result in
+                        DispatchQueue.main.async {
+                            completion(result)
+                        }
+                    }
+                    guard error == nil else {
+                        completionOnMain(.failure(.serverError))
+                        return
+                    }
+                    guard let response = response as? HTTPURLResponse else {
+                        completionOnMain(.failure(.badResponse))
+                        return
+                    }
+                    switch response.statusCode {
+                    case 200...299:
+                        guard let unwrappedData = data else {
+                            completionOnMain(.failure(.noData))
+                            return
+                        }
+                        do {
+                            let data = try JSONDecoder().decode(T.self, from: unwrappedData)
+                            completionOnMain(.success(data))
+                        } catch {
+                            print(error)
+                            completionOnMain(.failure(.parseError))
+                        }
+                        
+                    default:
+                        completionOnMain(.failure(.genericError("Something went wrong")))
+                    }
+                }
+            } catch {
+                completion(.failure(.badRequest))
+            }
+            self.task?.resume()
         }
-        self.task?.resume()
-    }
     
     func cancel() {
         self.task?.cancel()
@@ -37,32 +66,30 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     
     private func buildRequest(from route: EndPoint) throws -> URLRequest {
         
-        guard let urlAddress = URL(string: route.fullAddress) else { fatalError("Converting failed") }
+        guard let urlAddress = URL(string: route.fullAddress) else { fatalError("Converting failed")}
         
         var request = URLRequest(url: urlAddress,
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                  timeoutInterval: 10.0)
         
-        print("Request URL \(String(describing: request.url))")
         request.httpMethod = route.httpMethod.rawValue
         do {
             switch route.task {
             case .request:
-                request.setValue("application/json?", forHTTPHeaderField: "Content-Type")
-                
-            case .requestParameters(let bodyParameters,
-                                    let bodyEncoding,
-                                    let urlParameters):
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            case let .requestParameters(bodyParameters,
+                                        bodyEncoding,
+                                        urlParameters):
                 
                 try self.configureParameters(bodyParameters: bodyParameters,
                                              bodyEncoding: bodyEncoding,
                                              urlParameters: urlParameters,
                                              request: &request)
                 
-            case .requestParametersAndHeaders(let bodyParameters,
-                                              let bodyEncoding,
-                                              let urlParameters,
-                                              let additionalHeaders):
+            case let .requestParametersAndHeaders(bodyParameters,
+                                                  bodyEncoding,
+                                                  urlParameters,
+                                                  additionalHeaders):
                 
                 self.addAdditionalHeaders(additionalHeaders, request: &request)
                 try self.configureParameters(bodyParameters: bodyParameters,
@@ -77,9 +104,9 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     }
     
     private func configureParameters(bodyParameters: Parameters?,
-                                     bodyEncoding: ParameterEncoding,
-                                     urlParameters: Parameters?,
-                                     request: inout URLRequest) throws {
+                                         bodyEncoding: ParameterEncoding,
+                                         urlParameters: Parameters?,
+                                         request: inout URLRequest) throws {
         do {
             try bodyEncoding.encode(urlRequest: &request,
                                     bodyParameters: bodyParameters,
@@ -96,3 +123,4 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         }
     }
 }
+
