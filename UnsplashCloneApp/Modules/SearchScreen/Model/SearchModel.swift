@@ -19,12 +19,13 @@ struct SearchModel: Decodable {
 }
 
 struct PhotoResult: Decodable {
-   var id: String
-   var createdAt: String
-   var updatedAt: String
-   var promotedAt: String
+   var id: String?
+   var createdAt: String?
+   var updatedAt: String?
+   var promotedAt: String?
    var width: Int
    var height: Int
+    var description: String?
     
     var links: Links
     var urls: Urls
@@ -38,16 +39,16 @@ struct PhotoResult: Decodable {
 }
 
 struct Urls: Decodable {
-    var raw: String
-    var full: String
-    var regular: String
-    var small: String
-    var thumb: String
+    var raw: String?
+    var full: String?
+    var regular: String?
+    var small: String?
+    var thumb: String?
 }
 
 struct Links: Decodable {
-    var html: String
-    var download: String
-    var download_location: String
+    var html: String?
+    var download: String?
+    var download_location: String?
 
 }

@@ -31,14 +31,11 @@ class MainListViewController: UIViewController {
         self.title = "Unsplash"
         mainListViewModel.fetchPhotoDetails()
     }
-    
-    
 }
 
 extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mainListViewModel.numberOfRows()
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,10 +45,11 @@ extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.configure(configurator: sendData)
         return cell
-        
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(mainListViewModel.openDetailsScreen(indexPath), animated: true)
+    }
 }
 
 extension MainListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -68,16 +66,13 @@ extension MainListViewController: UICollectionViewDelegate, UICollectionViewData
         cell.configure(data: sendData)
         return cell
     }
-    
 }
-
 
 extension MainListViewController: MainViewModelProtocol {
     
     func reloadData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            
         }
     }
 }

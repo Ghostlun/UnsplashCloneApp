@@ -18,7 +18,7 @@ class MainListViewModel {
     
     weak var delegate: MainViewModelProtocol?
     
-    var collectionViewDataSource: [String] = ["Editorial", "Wallpapers", "Nature", "People", "Architecture", "Current Events", "Businnes & work", "Experimental", "Fashion", "Film", "Health & Wellness", "Interiors", "Street Photography", "Technology", "Travel", "Textures & Patterns", "Animals", "Food & Drink", "Athletics"]
+    
     
     private var dataSource: [SplashCellViewModelProtocol] {
         didSet {
@@ -31,6 +31,8 @@ class MainListViewModel {
         self.dataSource = []
     }
     
+    var collectionViewDataSource: [String] = ["Editorial", "Wallpapers", "Nature", "People", "Architecture", "Current Events", "Businnes & work", "Experimental", "Fashion", "Film", "Health & Wellness", "Interiors", "Street Photography", "Technology", "Travel", "Textures & Patterns", "Animals", "Food & Drink", "Athletics"]
+    
     func numbersOfCollectionRows() -> Int {
         collectionViewDataSource.count
     }
@@ -38,7 +40,7 @@ class MainListViewModel {
     func category(at index: Int) -> String {
         collectionViewDataSource[index]
     }
-  
+    
     func numberOfRows() -> Int {
         self.dataSource.count
     }
@@ -47,20 +49,31 @@ class MainListViewModel {
         self.dataSource[index]
     }
     
+    func openDetailsScreen(_ indexPath: IndexPath) -> DetailsViewController{
+        let detailData = self.photo(at: indexPath.row)
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let detailViewController = storyboard.instantiateViewController(identifier: DetailsViewController.reuseIdentifier) as? DetailsViewController {
+            detailViewController.detailsData = detailData
+            return detailViewController
+        } else {
+            print("Can't find storyboard")
+        }
+        return DetailsViewController()
+    }
     
     func fetchPhotoDetails() {
         self.router.request(SplashCollectionApi.collection) { [weak self] (result: Result<SplashModels, AppError>) in
             switch result {
             case .success(let splashData):
                 let compactedData = splashData.compactMap {
-                                SplashCellViewModel(splashModel: $0)
-                            }
-    
+                    SplashCellViewModel(splashModel: $0)
+                }
+                
                 self?.dataSource = compactedData
+                
             case .failure(let error):
                 print(error)
             }
         }
     }
-
 }

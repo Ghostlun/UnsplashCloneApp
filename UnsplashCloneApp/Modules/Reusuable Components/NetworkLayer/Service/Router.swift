@@ -20,45 +20,45 @@ class Router<U: EndPoint>: NetworkRouter {
     private var task: URLSessionTask?
     
     func request<T: Decodable>(_ route: EndPoint, completion: @escaping NetworkRouterCompletion<T>) {
-            do {
-                let request = try self.buildRequest(from: route)
-                task = session.dataTask(with: request) { data, response, error in
-                    let completionOnMain: (Result<T, AppError>) -> Void = { result in
-                        DispatchQueue.main.async {
-                            completion(result)
-                        }
-                    }
-                    guard error == nil else {
-                        completionOnMain(.failure(.serverError))
-                        return
-                    }
-                    guard let response = response as? HTTPURLResponse else {
-                        completionOnMain(.failure(.badResponse))
-                        return
-                    }
-                    switch response.statusCode {
-                    case 200...299:
-                        guard let unwrappedData = data else {
-                            completionOnMain(.failure(.noData))
-                            return
-                        }
-                        do {
-                            let data = try JSONDecoder().decode(T.self, from: unwrappedData)
-                            completionOnMain(.success(data))
-                        } catch {
-                            print(error)
-                            completionOnMain(.failure(.parseError))
-                        }
-                        
-                    default:
-                        completionOnMain(.failure(.genericError("Something went wrong")))
+        do {
+            let request = try self.buildRequest(from: route)
+            task = session.dataTask(with: request) { data, response, error in
+                let completionOnMain: (Result<T, AppError>) -> Void = { result in
+                    DispatchQueue.main.async {
+                        completion(result)
                     }
                 }
-            } catch {
-                completion(.failure(.badRequest))
+                guard error == nil else {
+                    completionOnMain(.failure(.serverError))
+                    return
+                }
+                guard let response = response as? HTTPURLResponse else {
+                    completionOnMain(.failure(.badResponse))
+                    return
+                }
+                switch response.statusCode {
+                case 200...299:
+                    guard let unwrappedData = data else {
+                        completionOnMain(.failure(.noData))
+                        return
+                    }
+                    do {
+                        let data = try JSONDecoder().decode(T.self, from: unwrappedData)
+                        completionOnMain(.success(data))
+                    } catch {
+                        print(error)
+                        completionOnMain(.failure(.parseError))
+                    }
+                    
+                default:
+                    completionOnMain(.failure(.genericError("Something went wrong")))
+                }
             }
-            self.task?.resume()
+        } catch {
+            completion(.failure(.badRequest))
         }
+        self.task?.resume()
+    }
     
     func cancel() {
         self.task?.cancel()
@@ -104,9 +104,9 @@ class Router<U: EndPoint>: NetworkRouter {
     }
     
     private func configureParameters(bodyParameters: Parameters?,
-                                         bodyEncoding: ParameterEncoding,
-                                         urlParameters: Parameters?,
-                                         request: inout URLRequest) throws {
+                                     bodyEncoding: ParameterEncoding,
+                                     urlParameters: Parameters?,
+                                     request: inout URLRequest) throws {
         do {
             try bodyEncoding.encode(urlRequest: &request,
                                     bodyParameters: bodyParameters,
@@ -123,4 +123,3 @@ class Router<U: EndPoint>: NetworkRouter {
         }
     }
 }
-

@@ -10,6 +10,7 @@ import Foundation
 enum SplashCollectionApi: EndPoint {
     
     case collection
+    
     var task: HTTPTask {
         .request
     }
@@ -22,11 +23,11 @@ enum SplashCollectionApi: EndPoint {
     }
     
     var baseUrlOption: String {
-        return "https://api.unsplash.com/collections/?client_id=2e5zRIIUowkNDy00Hh41zKFlmpyFtmBja6DuA-CIn88"
+        "https://api.unsplash.com/collections/?client_id=2e5zRIIUowkNDy00Hh41zKFlmpyFtmBja6DuA-CIn88"
     }
     
     var path: String {
-        return ""
+         ""
     }
     
     var apiKey: String {
@@ -34,6 +35,6 @@ enum SplashCollectionApi: EndPoint {
       }
     
     var fullAddress: String {
-       return baseUrlOption + path + apiKey
+        baseUrlOption + path + apiKey
     }
 }

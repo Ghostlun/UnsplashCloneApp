@@ -7,5 +7,7 @@ target 'UnsplashCloneApp' do
 
   # Pods for UnsplashCloneApp
     pod 'SDWebImage'
+pod 'Firebase/Analytics'
+pod 'Firebase/Auth'
 
 end

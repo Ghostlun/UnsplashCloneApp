@@ -16,52 +16,57 @@ class SearchViewController: UIViewController {
     }
     
     
-    lazy var searchViewModel = SearchViewModel()
-    
     @IBOutlet private var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
+            self.tableView.register(UINib(nibName: SplashTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SplashTableViewCell.reuseIdentifier)
         }
     }
     
+    lazy var searchViewModel = SearchViewModel(delegate: self)
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }
 
 extension SearchViewController: UISearchBarDelegate {
-
-    func reloadData() {
-    }
     
     func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+      
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchViewModel.fetchItem(keyword: searchBar.text ?? "")
         tableView.reloadData()
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-      
-    }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        searchViewModel.numbersOfTableViewRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        let photoResult = searchViewModel.photoResult(at: indexPath.row)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SplashTableViewCell.reuseIdentifier, for: indexPath) as? SplashTableViewCell else { return UITableViewCell() }
+        cell.configure(configurator: photoResult)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-
+        print("Cell clicked")
+        navigationController?.pushViewController(searchViewModel.openDetailsScreen(indexPath), animated: true)
     }
+}
+
+extension SearchViewController: SearchViewModelProtocol {
+        func reloadData() {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                
+            }
+        }
 }
