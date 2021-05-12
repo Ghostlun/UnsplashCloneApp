@@ -55,6 +55,9 @@
 		D9DBFB52264C3E6400BFB61B /* TitleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB50264C3E6300BFB61B /* TitleTableCell.swift */; };
 		D9DBFB53264C3E6400BFB61B /* TitleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DBFB51264C3E6300BFB61B /* TitleTableCell.xib */; };
 		D9DBFB55264C4A3400BFB61B /* AlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB54264C4A3400BFB61B /* AlertProtocol.swift */; };
+		D9DBFB58264C5D6200BFB61B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB57264C5D6100BFB61B /* User.swift */; };
+		D9DBFB5C264C71A300BFB61B /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DBFB5B264C71A200BFB61B /* LoginView.storyboard */; };
+		D9DBFB5F264C75BE00BFB61B /* LoginSubviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB5E264C75BE00BFB61B /* LoginSubviewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +113,9 @@
 		D9DBFB50264C3E6300BFB61B /* TitleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableCell.swift; sourceTree = "<group>"; };
 		D9DBFB51264C3E6300BFB61B /* TitleTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableCell.xib; sourceTree = "<group>"; };
 		D9DBFB54264C4A3400BFB61B /* AlertProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertProtocol.swift; sourceTree = "<group>"; };
+		D9DBFB57264C5D6100BFB61B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D9DBFB5B264C71A200BFB61B /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
+		D9DBFB5E264C75BE00BFB61B /* LoginSubviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSubviewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,7 @@
 		D909C7B52642BA3B00713750 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D9DBFB59264C674B00BFB61B /* LoginView */,
 				D9DBFB2D264AECE800BFB61B /* ContributeScreen */,
 				D9DBFB29264AE30600BFB61B /* MyProfileScreen */,
 				D9DBFB22264A627C00BFB61B /* RegisterScreen */,
@@ -459,6 +466,7 @@
 		D9DBFB22264A627C00BFB61B /* RegisterScreen */ = {
 			isa = PBXGroup;
 			children = (
+				D9DBFB56264C5D3100BFB61B /* Model */,
 				D9DBFB25264A629F00BFB61B /* Controller */,
 			);
 			path = RegisterScreen;
@@ -598,6 +606,39 @@
 			path = TitleTableCell;
 			sourceTree = "<group>";
 		};
+		D9DBFB56264C5D3100BFB61B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBFB57264C5D6100BFB61B /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9DBFB59264C674B00BFB61B /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBFB5D264C759300BFB61B /* Controller */,
+				D9DBFB5A264C718B00BFB61B /* View */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		D9DBFB5A264C718B00BFB61B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBFB5B264C71A200BFB61B /* LoginView.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D9DBFB5D264C759300BFB61B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBFB5E264C75BE00BFB61B /* LoginSubviewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -662,6 +703,7 @@
 				D909C7AA2642BA2700713750 /* Assets.xcassets in Resources */,
 				D9DBFB20264A5A7200BFB61B /* GoogleService-Info.plist in Resources */,
 				D9DBFAAE2645A70000BFB61B /* SplashTableViewCell.xib in Resources */,
+				D9DBFB5C264C71A300BFB61B /* LoginView.storyboard in Resources */,
 				D909C7A82642BA2500713750 /* Main.storyboard in Resources */,
 				D9DBFB53264C3E6400BFB61B /* TitleTableCell.xib in Resources */,
 			);
@@ -753,6 +795,7 @@
 				D909C7BF2642F50600713750 /* SplashModel.swift in Sources */,
 				D909C7A32642BA2500713750 /* SceneDelegate.swift in Sources */,
 				D9B36486264595330047707E /* EndPoint+Ext.swift in Sources */,
+				D9DBFB58264C5D6200BFB61B /* User.swift in Sources */,
 				D9DBFB28264A630300BFB61B /* LoginController.swift in Sources */,
 				D9DBFB132649CF5A00BFB61B /* DetailsViewController.swift in Sources */,
 				D9DBFB42264B92E400BFB61B /* LatestModel.swift in Sources */,
@@ -766,6 +809,7 @@
 				D9B36483264595290047707E /* HTTPTask.swift in Sources */,
 				D9B364842645952C0047707E /* HTTPMethod.swift in Sources */,
 				D9B3647E264592020047707E /* SplashCellViewModel.swift in Sources */,
+				D9DBFB5F264C75BE00BFB61B /* LoginSubviewController.swift in Sources */,
 				D9DBFB0E26499AAC00BFB61B /* SearchModel.swift in Sources */,
 				D9DBFB52264C3E6400BFB61B /* TitleTableCell.swift in Sources */,
 				D9DBFAC62649820700BFB61B /* SearchViewController.swift in Sources */,

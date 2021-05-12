@@ -28,4 +28,9 @@ class DetailsViewController: UIViewController, CellReusable {
         guard let view = detailsData?.shareSheetViewController else { return }
         self.present(view, animated: true, completion: nil)
     }
+    
+    @IBAction private func loadData() {
+        let pop = UIStoryboard(name: "LoginView", bundle: nil).instantiateViewController(identifier: "LoginSubviewController")
+        self.addChild(pop)
+    }
 }

@@ -6,6 +6,7 @@
 //
 
 import FirebaseAuth
+import FirebaseFirestore
 import UIKit
 
 class RegisterViewController: UIViewController {
@@ -16,13 +17,31 @@ class RegisterViewController: UIViewController {
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     
+    lazy var user = User(firstName: "", lastName: "", userName: "", email: "", password: "")
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction private func singUp() {
-        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        Auth.auth().createUser(withEmail: email, password: password) { _, error in
+    private func getUserInformation() {
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text,
+              let firstName = firstNameTextField.text,
+              let lastName = lastNameTextField.text,
+              let userName = userNameTextField.text
+            else { return }
+        user = User(firstName: firstName, lastName: lastName, userName: userName, email: email, password: password)
+    }
+    
+    @IBAction private func signUpButtonClicked() {
+        getUserInformation()
+        createUser()
+        addDataIntoFirebaseStore()
+    }
+    
+    private func createUser() {
+        Auth.auth().createUser(withEmail: user.email, password: user.password) { _, error in
             if let error = error as NSError? {
                 switch AuthErrorCode(rawValue: error.code) {
                 case .operationNotAllowed:
@@ -42,19 +61,23 @@ class RegisterViewController: UIViewController {
                 }
             } else {
                 print("User signs up successfully")
-//                let newUserInfo = Auth.auth().currentUser
-//                let _ = newUserInfo?.email
             }
         }
     }
     
-    func isValidEmail(_ email: String) -> Bool {
+    private func addDataIntoFirebaseStore() {
+        let data = ["email": user.email, "firstName": user.firstName, "lastName": user.lastName, "password": user.password, "userName": user.userName]
+        db.collection("users").document(user.userName).setData(data, merge: true)
+        print("Create page")
+    }
+    
+    private func isValidEmail(_ email: String) -> Bool {
        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
        return emailPred.evaluate(with: email)
      }
      
-     func isValidPassword(_ password: String) -> Bool {
+     private func isValidPassword(_ password: String) -> Bool {
        let minPasswordLength = 6
        return password.count >= minPasswordLength
      }

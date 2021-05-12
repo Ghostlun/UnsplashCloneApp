@@ -47,7 +47,7 @@ class LicenseViewController: UIViewController {
     }
     
     @IBAction private func done() {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
