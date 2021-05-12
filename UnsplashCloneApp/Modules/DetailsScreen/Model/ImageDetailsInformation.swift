@@ -17,4 +17,3 @@ struct ImageDetailsInformation {
     var dimension: String = "3000 * 4500"
     var published: String = "March 21, 2020"
 }
-

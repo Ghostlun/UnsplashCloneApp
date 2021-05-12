@@ -14,6 +14,7 @@ class MainListViewController: UIViewController {
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.register(UINib(nibName: SplashTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SplashTableViewCell.reuseIdentifier)
+            self.tableView.register(UINib(nibName: TitleTableCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: TitleTableCell.reuseIdentifier)
         }
     }
     
@@ -21,6 +22,7 @@ class MainListViewController: UIViewController {
         didSet {
             self.collectionView.delegate = self
             self.collectionView.dataSource = self
+            self.collectionView.backgroundColor = nil
         }
     }
     
@@ -29,7 +31,7 @@ class MainListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Unsplash"
-        mainListViewModel.fetchPhotoDetails()
+        self.mainListViewModel.fetchPhotoDetails()
     }
 }
 
@@ -41,8 +43,15 @@ extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let sendData = self.mainListViewModel.photo(at: indexPath.row)
+
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableCell.reuseIdentifier, for: indexPath) as? TitleTableCell else { return UITableViewCell()
+            }
+            cell.configure(configurator: sendData)
+            return cell
+        }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SplashTableViewCell.reuseIdentifier, for: indexPath) as? SplashTableViewCell else { return UITableViewCell() }
-        
+    
         cell.configure(configurator: sendData)
         return cell
     }
@@ -65,6 +74,12 @@ extension MainListViewController: UICollectionViewDelegate, UICollectionViewData
                                                             for: indexPath) as? CollectionViewCategoryCell else { return UICollectionViewCell() }
         cell.configure(data: sendData)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = mainListViewModel.collectionViewDataSource[indexPath.row]
+        print("Did Select \(category)")
+        mainListViewModel.fetchPhotoDetails(category: category)
     }
 }
 

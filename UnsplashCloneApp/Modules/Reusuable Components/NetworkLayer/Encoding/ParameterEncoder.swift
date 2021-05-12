@@ -25,9 +25,11 @@ enum ParameterEncoding {
             case .urlEncoding:
                 guard let urlParameters = urlParameters else { return }
                 try URLParameterEncoder().encode(urlRequest: &urlRequest, with: urlParameters)
+                
             case .jsonEncoding:
                 guard let bodyParameters = bodyParameters else { return }
                 try JSONParameterEncoder().encode(urlRequest: &urlRequest, with: bodyParameters)
+                
             case .urlAndJsonEncoding:
                 guard let bodyParameters = bodyParameters,
                     let urlParameters = urlParameters else { return }
@@ -45,4 +47,3 @@ enum NetworkError: String, Error {
     case encodingFailed = "Parameter encoding failed."
     case missingURL = "URL is nil."
 }
-

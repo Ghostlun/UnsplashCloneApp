@@ -19,16 +19,17 @@ struct SearchModel: Decodable {
 }
 
 struct PhotoResult: Decodable {
-   var id: String?
-   var createdAt: String?
-   var updatedAt: String?
-   var promotedAt: String?
-   var width: Int
-   var height: Int
+    var id: String?
+    var createdAt: String?
+    var updatedAt: String?
+    var promotedAt: String?
+    var width: Int
+    var height: Int
     var description: String?
     
     var links: Links
     var urls: Urls
+//    var user: Users
     
     enum CodingKeys: String, CodingKey {
         case id, width, height, links, urls
@@ -49,6 +50,10 @@ struct Urls: Decodable {
 struct Links: Decodable {
     var html: String?
     var download: String?
-    var download_location: String?
-
+    var downloadLocation: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case html, download
+        case downloadLocation = "download_location"
+    }
 }

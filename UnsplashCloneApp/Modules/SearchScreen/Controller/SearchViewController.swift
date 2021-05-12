@@ -15,7 +15,6 @@ class SearchViewController: UIViewController {
         }
     }
     
-    
     @IBOutlet private var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -32,16 +31,11 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UISearchBarDelegate {
-    
-    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
-      
-    }
-    
+        
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchViewModel.fetchItem(keyword: searchBar.text ?? "")
         tableView.reloadData()
     }
-    
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -66,7 +60,6 @@ extension SearchViewController: SearchViewModelProtocol {
         func reloadData() {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                
             }
         }
 }

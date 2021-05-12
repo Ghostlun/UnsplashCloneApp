@@ -1,5 +1,5 @@
 //
-//  SplashTableCellViewModel.swift
+//  SplashCellViewModel.swift
 //  UnsplashCloneApp
 //
 //  Created by Yoonha Kim on 5/7/21.
@@ -27,16 +27,16 @@ class SplashCellViewModel: SplashCellViewModelProtocol {
     }
     
     var provider: String {
-        splashModel.tags[0].source?.coverPhoto?.id ?? ""
+        splashModel.title
     }
     
     var mainImage: URL {
-        guard let url = URL(string: splashModel.tags[0].source?.coverPhoto?.urls?.regular ?? "https://www.w3schools.com/images/picture.jpg") else { fatalError("No Address")}
+        guard let url = URL(string: splashModel.coverPhoto.urls?.raw ?? "https://www.w3schools.com/images/picture.jpg") else { fatalError("No Address") }
         return url
     }
     
     var shareUrlAddress: String {
-        splashModel.tags[0].source?.coverPhoto?.urls?.regular ?? ""
+        splashModel.coverPhoto.urls?.raw ?? "https://www.w3schools.com/images/picture.jpg"
     }
     
     var imageInformation: ImageDetailsInformation {

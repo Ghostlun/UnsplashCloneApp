@@ -13,8 +13,6 @@ class DetailsViewController: UIViewController, CellReusable {
   
     var detailsData: SplashCellViewModelProtocol?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = detailsData?.imageName ?? ""

@@ -14,7 +14,7 @@ enum SearchApi: EndPoint {
     case search(query: String)
     
     var environmentBaseUrl: String {
-        return "https://api.unsplash.com/search/photos?page=1"
+        "https://api.unsplash.com/search/photos?page=1"
     }
     
     var task: HTTPTask {

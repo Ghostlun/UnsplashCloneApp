@@ -24,25 +24,22 @@ class SearchTableViewModel: SplashCellViewModelProtocol {
         ImageDetailsInformation()
     }
     
-    
     var imageName: String {
         searchResultModel.description ?? ""
     }
         
-
     var shareUrlAddress: String {
         searchResultModel.urls.full ?? ""
     }
     
     var mainImage: URL {
-        guard let  url = URL(string: searchResultModel.urls.full ?? "https://www.w3schools.com/images/picture.jpg") else { fatalError("No Address")}
+        guard let url = URL(string: searchResultModel.urls.full ?? "https://www.w3schools.com/images/picture.jpg") else { fatalError("No Address") }
         return url
     }
     
     var sharePictureAddress: String {
         searchResultModel.urls.full ?? ""
     }
-    
     
     var shareSheetViewController: UIActivityViewController {
         let controller = UIActivityViewController(activityItems: [shareUrlAddress], applicationActivities: nil)

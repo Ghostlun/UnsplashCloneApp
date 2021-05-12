@@ -5,36 +5,33 @@
 //  Created by Yoonha Kim on 5/11/21.
 //
 
+// Test Id: test123@gmail.com
+// Password: 1211asdF
+//    if Auth.auth().currentUser != nil {}
+
+import FirebaseAuth
 import UIKit
-import Firebase
 
 class LoginController: UIViewController {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var signIn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        checkUserLogin()
     }
     
-//    func checkUserLogin () {
-//        if let user = Auth.auth().currentUser {
-//            print("Already Sign Ined")
-//        }
-//    }
-//
-//    @IBAction func loginButtonClicked {
-//    Auth.auth().signIn(withEmail: emailTextField.text ?? "", password: (passwordTextField ?? "") as! String) { (user, error )in
-//
-//                if user != nil {
-//                    print("Login Success")
-//                }
-//                else {
-//                    print("Login failed)
-//                }
-//            }
-//        }
-//
-//    }
+    @IBAction private func loginButtonClicked() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { user, _ in
+            if user != nil {
+                print("Login Success")
+                self.signIn.setTitle("Sign Out", for: .normal)
+            } else {
+                print("Login Fails")
+            }
+        }
+    }
 }

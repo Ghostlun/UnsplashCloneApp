@@ -12,7 +12,6 @@ protocol SearchViewModelProtocol: AnyObject {
     func reloadData()
 }
 
-
 class SearchViewModel {
 
     private var dataSource: [PhotoResult]

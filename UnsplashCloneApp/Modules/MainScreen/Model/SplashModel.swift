@@ -13,32 +13,17 @@ struct SplashModel: Decodable {
     var title: String
     var description: String?
     var updatedAt: String
-    var curated: Bool
     var featured: Bool
     var totalPhotos: Int?
     var shareKey: String?
-    var tags: [Tags]
+    var links: Links
+    var coverPhoto: CoverPhoto
     
     enum CodingKeys: String, CodingKey {
-        case id, title, description, curated, tags, featured
+        case id, title, description, featured, links
         case updatedAt = "updated_at"
         case totalPhotos = "total_photos"
         case shareKey = "share_key"
-    }
-}
-
-struct Tags: Decodable {
-    var source: Source?
-}
-
-struct Source: Decodable {
-    var title: String
-    var subtitle: String
-    var coverPhoto: CoverPhoto?
-    var description: String
-    
-    enum CodingKeys: String, CodingKey {
-        case title, subtitle, description
         case coverPhoto = "cover_photo"
     }
 }

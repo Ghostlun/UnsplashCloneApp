@@ -66,7 +66,7 @@ class Router<U: EndPoint>: NetworkRouter {
     
     private func buildRequest(from route: EndPoint) throws -> URLRequest {
         
-        guard let urlAddress = URL(string: route.fullAddress) else { fatalError("Converting failed")}
+        guard let urlAddress = URL(string: route.fullAddress) else { fatalError("Converting failed") }
         
         var request = URLRequest(url: urlAddress,
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
