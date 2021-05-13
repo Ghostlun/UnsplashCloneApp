@@ -37,7 +37,6 @@ class RegisterViewController: UIViewController {
     @IBAction private func signUpButtonClicked() {
         getUserInformation()
         createUser()
-        addDataIntoFirebaseStore()
     }
     
     private func createUser() {
@@ -60,17 +59,15 @@ class RegisterViewController: UIViewController {
                     print("Error: \(error.localizedDescription)")
                 }
             } else {
+                self.dismiss(animated: true, completion: nil)
                 print("User signs up successfully")
+                let data = ["email": self.user.email, "firstName": self.user.firstName, "lastName": self.user.lastName, "password": self.user.password, "userName": self.user.userName]
+                self.db.collection("users").addDocument(data: data)
+                print("Create page")
             }
         }
     }
-    
-    private func addDataIntoFirebaseStore() {
-        let data = ["email": user.email, "firstName": user.firstName, "lastName": user.lastName, "password": user.password, "userName": user.userName]
-        db.collection("users").document(user.userName).setData(data, merge: true)
-        print("Create page")
-    }
-    
+
     private func isValidEmail(_ email: String) -> Bool {
        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)

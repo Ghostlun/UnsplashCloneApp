@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainListViewController" title="Unsplash" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainListViewController" customModule="UnsplashCloneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="764"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QEF-Yi-KAQ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QEF-Yi-KAQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EFd-DU-P8r">
@@ -81,7 +81,6 @@
                             <constraint firstItem="EFd-DU-P8r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wuy-pP-Ug7"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Unsplash" largeTitleDisplayMode="never" id="1QV-zB-Ipf">
                         <barButtonItem key="leftBarButtonItem" image="small" width="5" id="kHh-E7-Hwf">
                             <inset key="imageInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -103,7 +102,7 @@
         <!--Navigation Controller-->
         <scene sceneID="G5e-D3-9JV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="ec4-4A-DhQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ec4-4A-DhQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="book" catalog="system" selectedImage="book.fill" id="mJq-Sn-bM5"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="rMR-4p-Onr"/>
@@ -118,10 +117,6 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z1d-aU-afs">
-                        <rect key="frame" x="0.0" y="764" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pvV-Xt-oRx"/>
                     </connections>
@@ -356,13 +351,12 @@
         <!--Title-->
         <scene sceneID="YOn-cM-Oe9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Axp-bu-idZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="DetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Nt-Pe-gS8" customClass="DetailsViewController" customModule="UnsplashCloneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QH9-CR-elD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VmB-AE-9aX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VmB-AE-9aX">
                                 <rect key="frame" x="0.0" y="88" width="414" height="695"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8o-67-Kmr">
@@ -377,6 +371,9 @@
                                     <constraint firstAttribute="height" constant="20" id="ozE-Ez-Cg2"/>
                                 </constraints>
                                 <state key="normal" image="plus.circle" catalog="system"/>
+                                <connections>
+                                    <segue destination="fW5-iZ-0pf" kind="presentation" id="ZYB-Jk-x4v"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omK-OW-QQe">
                                 <rect key="frame" x="324" y="733" width="50" height="50"/>
@@ -429,8 +426,19 @@
                         <outlet property="mainImageView" destination="VmB-AE-9aX" id="1U8-Nv-eaY"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Axp-bu-idZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4697" y="792"/>
+        </scene>
+        <!--LoginSubviewController-->
+        <scene sceneID="QtS-B2-RsF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginView" referencedIdentifier="LoginSubviewController" id="fW5-iZ-0pf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dog-6W-bjw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dY-E7-Gfk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5625" y="830"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tdX-BR-OV2">

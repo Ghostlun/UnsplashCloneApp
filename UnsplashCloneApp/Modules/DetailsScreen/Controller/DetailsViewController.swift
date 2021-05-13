@@ -30,7 +30,7 @@ class DetailsViewController: UIViewController, CellReusable {
     }
     
     @IBAction private func loadData() {
-        let pop = UIStoryboard(name: "LoginView", bundle: nil).instantiateViewController(identifier: "LoginSubviewController")
-        self.addChild(pop)
+        let view = UIStoryboard(name: "LoginView", bundle: nil).instantiateViewController(identifier: "LoginSubviewController")
+        self.navigationController?.pushViewController(view, animated: true)
     }
 }

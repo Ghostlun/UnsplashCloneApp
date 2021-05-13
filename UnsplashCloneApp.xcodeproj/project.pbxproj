@@ -15,6 +15,7 @@
 		D909C7AA2642BA2700713750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D909C7A92642BA2700713750 /* Assets.xcassets */; };
 		D909C7AD2642BA2700713750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D909C7AB2642BA2700713750 /* LaunchScreen.storyboard */; };
 		D909C7BF2642F50600713750 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C7BE2642F50500713750 /* SplashModel.swift */; };
+		D97E0C27264CAAFA0001EE39 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C26264CAAFA0001EE39 /* RegisterViewModel.swift */; };
 		D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647B264590E40047707E /* MainListViewModel.swift */; };
 		D9B3647E264592020047707E /* SplashCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647D264592020047707E /* SplashCellViewModel.swift */; };
 		D9B3647F2645951D0047707E /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3646F264588D40047707E /* ParameterEncoder.swift */; };
@@ -73,6 +74,7 @@
 		D909C7AC2642BA2700713750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D909C7AE2642BA2700713750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D909C7BE2642F50500713750 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
+		D97E0C26264CAAFA0001EE39 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		D9B3646A264588460047707E /* SplashTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashTableViewCell.xib; sourceTree = "<group>"; };
 		D9B3646B264588460047707E /* SplashTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTableViewCell.swift; sourceTree = "<group>"; };
 		D9B3646F264588D40047707E /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
@@ -263,6 +265,14 @@
 			children = (
 				D9B3647A26458F640047707E /* TableCellViewModel */,
 				D9B3647926458F5B0047707E /* MainListViewModel */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D97E0C25264CAADE0001EE39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D97E0C26264CAAFA0001EE39 /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -466,6 +476,7 @@
 		D9DBFB22264A627C00BFB61B /* RegisterScreen */ = {
 			isa = PBXGroup;
 			children = (
+				D97E0C25264CAADE0001EE39 /* ViewModel */,
 				D9DBFB56264C5D3100BFB61B /* Model */,
 				D9DBFB25264A629F00BFB61B /* Controller */,
 			);
@@ -790,6 +801,7 @@
 				D9DBFB1C264A272F00BFB61B /* ImageDetailsInformation.swift in Sources */,
 				D9DBFAAC26459C2D00BFB61B /* CellReusable+Extension.swift in Sources */,
 				D909C7A12642BA2500713750 /* AppDelegate.swift in Sources */,
+				D97E0C27264CAAFA0001EE39 /* RegisterViewModel.swift in Sources */,
 				D9DBFB4E264C373A00BFB61B /* UIViewController+Ext.swift in Sources */,
 				D9DBFAAD26459CF200BFB61B /* SplashTableViewCell.swift in Sources */,
 				D909C7BF2642F50600713750 /* SplashModel.swift in Sources */,

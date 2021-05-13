@@ -12,4 +12,8 @@ class LoginSubviewController: UIViewController, CellReusable {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction private func myUnwindAction(unwindSegue: UIStoryboardSegue) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
