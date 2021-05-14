@@ -26,7 +26,7 @@ class RegisterViewModel {
                     self.viewController.showAlert(title: "Your register is not allowed", message: "please check network", buttons: [.ok]) { _, _ in }
                     
                 case .emailAlreadyInUse:
-                    self.viewController.showAlert(title: "Email already used", message: "please type different network", buttons: [.ok]) { _, _ in }
+                    self.viewController.showAlert(title: "Email already used", message: "please type different email", buttons: [.ok]) { _, _ in }
                     
                 case .invalidEmail:
                     self.viewController.showAlert(title: "Email address is badly formatted", message: "please check your email types", buttons: [.ok]) { _, _ in }
@@ -42,7 +42,9 @@ class RegisterViewModel {
                 print("User signs up successfully")
                 let data = ["email": user.email, "firstName": user.firstName, "lastName": user.lastName, "password": user.password, "userName": user.userName]
                 self.db.collection("users").addDocument(data: data)
+                self.viewController.showAlert(title: "You successfully signed up", message: "Welcome Unsplash App", buttons: [.ok]) { _, _ in }
                 print("Create page")
+                self.openTheProfilePage()
             }
         }
     }
@@ -52,6 +54,13 @@ class RegisterViewModel {
        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
        return emailPred.evaluate(with: email)
      }
+    
+    private func openTheProfilePage() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let profileController = storyboard.instantiateViewController(identifier: "MyProfileController") as? MyProfileController {
+            self.viewController.present(profileController, animated: true, completion: nil)
+        }
+    }
      
      private func isValidPassword(_ password: String) -> Bool {
        let minPasswordLength = 6

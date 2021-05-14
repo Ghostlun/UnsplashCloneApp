@@ -11,6 +11,7 @@ import UIKit
 class LoginViewModel {
     
     let viewController: UIViewController
+    let userName: String = ""
     
     init(viewController: UIViewController) {
         self.viewController = viewController

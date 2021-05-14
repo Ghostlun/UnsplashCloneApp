@@ -28,6 +28,19 @@
 		D97E0C42264E41B40001EE39 /* TopicSplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C41264E41B40001EE39 /* TopicSplashModel.swift */; };
 		D97E0C46264E52380001EE39 /* TopicDataCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C45264E52380001EE39 /* TopicDataCellViewModel.swift */; };
 		D97E0C48264E5F860001EE39 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C47264E5F860001EE39 /* UIView+extension.swift */; };
+		D97E0C57264E76340001EE39 /* profileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C4A264E76310001EE39 /* profileImage.png */; };
+		D97E0C58264E76340001EE39 /* mainScreen1.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C4B264E76310001EE39 /* mainScreen1.png */; };
+		D97E0C59264E76340001EE39 /* searchPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C4C264E76320001EE39 /* searchPhoto.png */; };
+		D97E0C5A264E76340001EE39 /* loginScreen1.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C4D264E76320001EE39 /* loginScreen1.png */; };
+		D97E0C5B264E76340001EE39 /* thidScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C4E264E76320001EE39 /* thidScreen.png */; };
+		D97E0C5C264E76340001EE39 /* licenseScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C4F264E76320001EE39 /* licenseScreen.png */; };
+		D97E0C5D264E76340001EE39 /* registerScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C50264E76320001EE39 /* registerScreen.png */; };
+		D97E0C5E264E76340001EE39 /* searchUsers.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C51264E76330001EE39 /* searchUsers.png */; };
+		D97E0C5F264E76340001EE39 /* loginScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C52264E76330001EE39 /* loginScreen.png */; };
+		D97E0C60264E76340001EE39 /* searchCollections.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C53264E76330001EE39 /* searchCollections.png */; };
+		D97E0C61264E76340001EE39 /* thirdScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C54264E76330001EE39 /* thirdScreen.png */; };
+		D97E0C62264E76340001EE39 /* mainScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C55264E76340001EE39 /* mainScreen.png */; };
+		D97E0C63264E76340001EE39 /* register.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C56264E76340001EE39 /* register.png */; };
 		D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647B264590E40047707E /* MainListViewModel.swift */; };
 		D9B3647E264592020047707E /* SplashCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647D264592020047707E /* SplashCellViewModel.swift */; };
 		D9B3647F2645951D0047707E /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3646F264588D40047707E /* ParameterEncoder.swift */; };
@@ -99,6 +112,19 @@
 		D97E0C41264E41B40001EE39 /* TopicSplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicSplashModel.swift; sourceTree = "<group>"; };
 		D97E0C45264E52380001EE39 /* TopicDataCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDataCellViewModel.swift; sourceTree = "<group>"; };
 		D97E0C47264E5F860001EE39 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		D97E0C4A264E76310001EE39 /* profileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage.png; sourceTree = "<group>"; };
+		D97E0C4B264E76310001EE39 /* mainScreen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainScreen1.png; sourceTree = "<group>"; };
+		D97E0C4C264E76320001EE39 /* searchPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchPhoto.png; sourceTree = "<group>"; };
+		D97E0C4D264E76320001EE39 /* loginScreen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreen1.png; sourceTree = "<group>"; };
+		D97E0C4E264E76320001EE39 /* thidScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thidScreen.png; sourceTree = "<group>"; };
+		D97E0C4F264E76320001EE39 /* licenseScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = licenseScreen.png; sourceTree = "<group>"; };
+		D97E0C50264E76320001EE39 /* registerScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registerScreen.png; sourceTree = "<group>"; };
+		D97E0C51264E76330001EE39 /* searchUsers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchUsers.png; sourceTree = "<group>"; };
+		D97E0C52264E76330001EE39 /* loginScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreen.png; sourceTree = "<group>"; };
+		D97E0C53264E76330001EE39 /* searchCollections.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchCollections.png; sourceTree = "<group>"; };
+		D97E0C54264E76330001EE39 /* thirdScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thirdScreen.png; sourceTree = "<group>"; };
+		D97E0C55264E76340001EE39 /* mainScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainScreen.png; sourceTree = "<group>"; };
+		D97E0C56264E76340001EE39 /* register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register.png; sourceTree = "<group>"; };
 		D9B3646A264588460047707E /* SplashTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashTableViewCell.xib; sourceTree = "<group>"; };
 		D9B3646B264588460047707E /* SplashTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTableViewCell.swift; sourceTree = "<group>"; };
 		D9B3646F264588D40047707E /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
@@ -262,6 +288,7 @@
 		D909C7B92642BA6F00713750 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D97E0C49264E6EF50001EE39 /* Github Resource */,
 				D909C7A92642BA2700713750 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -335,6 +362,26 @@
 				D97E0C45264E52380001EE39 /* TopicDataCellViewModel.swift */,
 			);
 			path = TopictableCellViewModel;
+			sourceTree = "<group>";
+		};
+		D97E0C49264E6EF50001EE39 /* Github Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D97E0C4F264E76320001EE39 /* licenseScreen.png */,
+				D97E0C52264E76330001EE39 /* loginScreen.png */,
+				D97E0C4D264E76320001EE39 /* loginScreen1.png */,
+				D97E0C55264E76340001EE39 /* mainScreen.png */,
+				D97E0C4B264E76310001EE39 /* mainScreen1.png */,
+				D97E0C4A264E76310001EE39 /* profileImage.png */,
+				D97E0C56264E76340001EE39 /* register.png */,
+				D97E0C50264E76320001EE39 /* registerScreen.png */,
+				D97E0C53264E76330001EE39 /* searchCollections.png */,
+				D97E0C4C264E76320001EE39 /* searchPhoto.png */,
+				D97E0C51264E76330001EE39 /* searchUsers.png */,
+				D97E0C4E264E76320001EE39 /* thidScreen.png */,
+				D97E0C54264E76330001EE39 /* thirdScreen.png */,
+			);
+			path = "Github Resource";
 			sourceTree = "<group>";
 		};
 		D9B36467264588390047707E /* EndPoint */ = {
@@ -780,12 +827,25 @@
 			files = (
 				D909C7AD2642BA2700713750 /* LaunchScreen.storyboard in Resources */,
 				D909C7AA2642BA2700713750 /* Assets.xcassets in Resources */,
+				D97E0C5C264E76340001EE39 /* licenseScreen.png in Resources */,
+				D97E0C5F264E76340001EE39 /* loginScreen.png in Resources */,
 				D97E0C32264D77670001EE39 /* UsersTableViewCell.xib in Resources */,
+				D97E0C61264E76340001EE39 /* thirdScreen.png in Resources */,
+				D97E0C5A264E76340001EE39 /* loginScreen1.png in Resources */,
+				D97E0C5B264E76340001EE39 /* thidScreen.png in Resources */,
+				D97E0C60264E76340001EE39 /* searchCollections.png in Resources */,
+				D97E0C57264E76340001EE39 /* profileImage.png in Resources */,
 				D9DBFB20264A5A7200BFB61B /* GoogleService-Info.plist in Resources */,
 				D97E0C2E264D774A0001EE39 /* CollectionTableViewCell.xib in Resources */,
 				D9DBFAAE2645A70000BFB61B /* SplashTableViewCell.xib in Resources */,
+				D97E0C5E264E76340001EE39 /* searchUsers.png in Resources */,
+				D97E0C5D264E76340001EE39 /* registerScreen.png in Resources */,
+				D97E0C62264E76340001EE39 /* mainScreen.png in Resources */,
+				D97E0C63264E76340001EE39 /* register.png in Resources */,
+				D97E0C58264E76340001EE39 /* mainScreen1.png in Resources */,
 				D9DBFB5C264C71A300BFB61B /* LoginView.storyboard in Resources */,
 				D909C7A82642BA2500713750 /* Main.storyboard in Resources */,
+				D97E0C59264E76340001EE39 /* searchPhoto.png in Resources */,
 				D9DBFB53264C3E6400BFB61B /* TitleTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

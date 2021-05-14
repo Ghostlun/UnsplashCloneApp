@@ -8,7 +8,9 @@
 import UIKit
 
 class MyProfileController: UIViewController {
-
+    
+    @IBOutlet private weak var userLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

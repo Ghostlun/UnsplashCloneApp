@@ -15,7 +15,11 @@ import UIKit
 class LoginController: UIViewController {
     
     @IBOutlet private weak var emailTextField: UITextField!
-    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField! {
+        didSet {
+            self.passwordTextField.isSecureTextEntry = true
+        }
+    }
     @IBOutlet private weak var signIn: UIButton!
     
     lazy var loginViewModel = LoginViewModel(viewController: self)
