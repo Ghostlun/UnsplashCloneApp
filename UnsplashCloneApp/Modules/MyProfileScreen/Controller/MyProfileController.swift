@@ -11,7 +11,10 @@ class MyProfileController: UIViewController {
     
     @IBOutlet private weak var userLabel: UILabel!
     
+    lazy var myProfileViewModel = MyProfileViewModel(viewController: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        myProfileViewModel.fetchData()
     }
 }

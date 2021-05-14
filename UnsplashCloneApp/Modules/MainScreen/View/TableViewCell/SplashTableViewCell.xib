@@ -23,20 +23,28 @@
                             <constraint firstAttribute="height" constant="400" id="hnp-TX-FJc"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOd-ng-693">
-                        <rect key="frame" x="20" y="369" width="36" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOd-ng-693">
+                        <rect key="frame" x="20" y="344" width="68" height="20"/>
                         <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sponsored by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAZ-oz-xhO">
+                        <rect key="frame" x="20" y="369" width="83" height="15"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="kF6-QS-YPv" secondAttribute="trailing" id="7Qa-KG-OBW"/>
+                    <constraint firstItem="OAZ-oz-xhO" firstAttribute="top" secondItem="oOd-ng-693" secondAttribute="bottom" constant="5" id="G0Z-fv-mRO"/>
                     <constraint firstAttribute="bottom" secondItem="kF6-QS-YPv" secondAttribute="bottom" id="KJe-BT-rEI"/>
                     <constraint firstItem="kF6-QS-YPv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="T6C-ef-Gwo"/>
-                    <constraint firstItem="oOd-ng-693" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="e3g-7f-NAT"/>
+                    <constraint firstItem="OAZ-oz-xhO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="VQ5-N1-cxp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="OAZ-oz-xhO" secondAttribute="bottom" constant="5" id="h37-f9-V4P"/>
+                    <constraint firstItem="oOd-ng-693" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="oTL-Bf-35T"/>
                     <constraint firstItem="kF6-QS-YPv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tAS-xJ-gtZ"/>
-                    <constraint firstItem="oOd-ng-693" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="tX3-Yr-tcU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

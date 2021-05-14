@@ -61,16 +61,19 @@ extension UIButton {
 }
 
 extension UIImageView {
-    
-    func makeRoundRectangleImageView(cornerRadius: CGFloat) {
-        self.layer.cornerRadius = cornerRadius
-    }
-    
+
     func makeRounded() {
         self.layer.borderWidth = 0.5
         self.layer.masksToBounds = false
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
+    }
+}
+
+extension UIView {
+    
+    func makeRoundRectangleImageView(cornerRadius: CGFloat) {
+        self.layer.cornerRadius = cornerRadius
     }
 }

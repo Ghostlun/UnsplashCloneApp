@@ -16,7 +16,7 @@ struct TopicSplashModel: Decodable {
     var altDescription: String?
     var urls: URLAddress?
     var links: Links?
-    var users: Users?
+    var user: Users?
 }
 
 typealias TopicSplashModels = [TopicSplashModel]

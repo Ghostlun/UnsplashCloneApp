@@ -17,7 +17,7 @@ class TopicDataCellViewModel: SplashCellViewModelProtocol {
     }
     
     var provider: String {
-        topicSplashModel.users?.name ?? ""
+        topicSplashModel.user?.name ?? ""
     }
     
     var mainImage: URL {

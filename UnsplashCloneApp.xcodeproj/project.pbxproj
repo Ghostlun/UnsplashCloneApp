@@ -47,6 +47,10 @@
 		D97E0C6F264E80120001EE39 /* collectionScreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C6B264E80120001EE39 /* collectionScreen.gif */; };
 		D97E0C71264E820D0001EE39 /* detailsScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C70264E820C0001EE39 /* detailsScreen.png */; };
 		D97E0C73264E84230001EE39 /* loginScreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C72264E84230001EE39 /* loginScreen.gif */; };
+		D97E0C77264F0C950001EE39 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C76264F0C950001EE39 /* MyProfileViewModel.swift */; };
+		D97E0C7A264F19240001EE39 /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C79264F19240001EE39 /* FileHandler.swift */; };
+		D97E0C7D264F1DE30001EE39 /* dataSet1.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C7B264F1DE20001EE39 /* dataSet1.png */; };
+		D97E0C7E264F1DE30001EE39 /* dataSet2.png in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C7C264F1DE30001EE39 /* dataSet2.png */; };
 		D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647B264590E40047707E /* MainListViewModel.swift */; };
 		D9B3647E264592020047707E /* SplashCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647D264592020047707E /* SplashCellViewModel.swift */; };
 		D9B3647F2645951D0047707E /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3646F264588D40047707E /* ParameterEncoder.swift */; };
@@ -68,7 +72,6 @@
 		D9DBFB0E26499AAC00BFB61B /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB0D26499AAC00BFB61B /* SearchModel.swift */; };
 		D9DBFB102649BDA200BFB61B /* SearchTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB0F2649BDA200BFB61B /* SearchTableViewModel.swift */; };
 		D9DBFB132649CF5A00BFB61B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB122649CF5A00BFB61B /* DetailsViewController.swift */; };
-		D9DBFB192649D56700BFB61B /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB182649D56700BFB61B /* DetailsViewModel.swift */; };
 		D9DBFB1C264A272F00BFB61B /* ImageDetailsInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB1B264A272F00BFB61B /* ImageDetailsInformation.swift */; };
 		D9DBFB20264A5A7200BFB61B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9DBFB1F264A5A7100BFB61B /* GoogleService-Info.plist */; };
 		D9DBFB24264A629700BFB61B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB23264A629700BFB61B /* RegisterViewController.swift */; };
@@ -137,6 +140,10 @@
 		D97E0C6B264E80120001EE39 /* collectionScreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = collectionScreen.gif; sourceTree = "<group>"; };
 		D97E0C70264E820C0001EE39 /* detailsScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailsScreen.png; sourceTree = "<group>"; };
 		D97E0C72264E84230001EE39 /* loginScreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loginScreen.gif; sourceTree = "<group>"; };
+		D97E0C76264F0C950001EE39 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		D97E0C79264F19240001EE39 /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
+		D97E0C7B264F1DE20001EE39 /* dataSet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dataSet1.png; sourceTree = "<group>"; };
+		D97E0C7C264F1DE30001EE39 /* dataSet2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dataSet2.png; sourceTree = "<group>"; };
 		D9B3646A264588460047707E /* SplashTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashTableViewCell.xib; sourceTree = "<group>"; };
 		D9B3646B264588460047707E /* SplashTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTableViewCell.swift; sourceTree = "<group>"; };
 		D9B3646F264588D40047707E /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
@@ -158,7 +165,6 @@
 		D9DBFB0D26499AAC00BFB61B /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		D9DBFB0F2649BDA200BFB61B /* SearchTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewModel.swift; sourceTree = "<group>"; };
 		D9DBFB122649CF5A00BFB61B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		D9DBFB182649D56700BFB61B /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		D9DBFB1B264A272F00BFB61B /* ImageDetailsInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsInformation.swift; sourceTree = "<group>"; };
 		D9DBFB1F264A5A7100BFB61B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9DBFB23264A629700BFB61B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -254,7 +260,6 @@
 		D909C7B52642BA3B00713750 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D9DBFB59264C674B00BFB61B /* LoginShortVersionScreen */,
 				D9DBFB2D264AECE800BFB61B /* ContributeScreen */,
 				D9DBFB29264AE30600BFB61B /* MyProfileScreen */,
 				D9DBFB22264A627C00BFB61B /* RegisterScreen */,
@@ -379,6 +384,8 @@
 		D97E0C49264E6EF50001EE39 /* Github Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D97E0C7B264F1DE20001EE39 /* dataSet1.png */,
+				D97E0C7C264F1DE30001EE39 /* dataSet2.png */,
 				D97E0C4F264E76320001EE39 /* licenseScreen.png */,
 				D97E0C52264E76330001EE39 /* loginScreen.png */,
 				D97E0C72264E84230001EE39 /* loginScreen.gif */,
@@ -402,6 +409,30 @@
 			path = "Github Resource";
 			sourceTree = "<group>";
 		};
+		D97E0C74264F05FC0001EE39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9DBFB5B264C71A200BFB61B /* LoginView.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D97E0C75264F0C7B0001EE39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D97E0C76264F0C950001EE39 /* MyProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D97E0C78264F19090001EE39 /* FileHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D97E0C79264F19240001EE39 /* FileHandler.swift */,
+			);
+			path = FileHandler;
+			sourceTree = "<group>";
+		};
 		D9B36467264588390047707E /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +454,7 @@
 		D9B3646C264588860047707E /* Reusuable Components */ = {
 			isa = PBXGroup;
 			children = (
+				D97E0C78264F19090001EE39 /* FileHandler */,
 				D9DBFB54264C4A3400BFB61B /* AlertProtocol.swift */,
 				D9DBFB4A264C342500BFB61B /* ContactFunctionHandler */,
 				D9B3646D264588D40047707E /* NetworkLayer */,
@@ -551,7 +583,6 @@
 			children = (
 				D9DBFB1D264A274200BFB61B /* Model */,
 				D9DBFB172649D49B00BFB61B /* DetailsView */,
-				D9DBFB162649D48A00BFB61B /* DetailsViewModel */,
 				D9DBFB142649D21100BFB61B /* Controller */,
 			);
 			path = DetailsScreen;
@@ -563,14 +594,6 @@
 				D9DBFB122649CF5A00BFB61B /* DetailsViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		D9DBFB162649D48A00BFB61B /* DetailsViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				D9DBFB182649D56700BFB61B /* DetailsViewModel.swift */,
-			);
-			path = DetailsViewModel;
 			sourceTree = "<group>";
 		};
 		D9DBFB172649D49B00BFB61B /* DetailsView */ = {
@@ -600,6 +623,7 @@
 		D9DBFB21264A626F00BFB61B /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				D97E0C74264F05FC0001EE39 /* View */,
 				D97E0C3E264DC4910001EE39 /* ViewModel */,
 				D9DBFB26264A62E600BFB61B /* Controller */,
 			);
@@ -627,6 +651,7 @@
 		D9DBFB26264A62E600BFB61B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D9DBFB5E264C75BE00BFB61B /* LoginSubviewController.swift */,
 				D9DBFB27264A630300BFB61B /* LoginController.swift */,
 			);
 			path = Controller;
@@ -635,6 +660,7 @@
 		D9DBFB29264AE30600BFB61B /* MyProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
+				D97E0C75264F0C7B0001EE39 /* ViewModel */,
 				D9DBFB2C264AE40B00BFB61B /* Controller */,
 			);
 			path = MyProfileScreen;
@@ -758,31 +784,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D9DBFB59264C674B00BFB61B /* LoginShortVersionScreen */ = {
-			isa = PBXGroup;
-			children = (
-				D9DBFB5D264C759300BFB61B /* Controller */,
-				D9DBFB5A264C718B00BFB61B /* View */,
-			);
-			path = LoginShortVersionScreen;
-			sourceTree = "<group>";
-		};
-		D9DBFB5A264C718B00BFB61B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D9DBFB5B264C71A200BFB61B /* LoginView.storyboard */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		D9DBFB5D264C759300BFB61B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D9DBFB5E264C75BE00BFB61B /* LoginSubviewController.swift */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -852,6 +853,7 @@
 				D97E0C32264D77670001EE39 /* UsersTableViewCell.xib in Resources */,
 				D97E0C61264E76340001EE39 /* collectionScreen.png in Resources */,
 				D97E0C5A264E76340001EE39 /* loginScreen1.png in Resources */,
+				D97E0C7D264F1DE30001EE39 /* dataSet1.png in Resources */,
 				D97E0C5B264E76340001EE39 /* collectionScreen1.png in Resources */,
 				D97E0C60264E76340001EE39 /* searchScreen.png in Resources */,
 				D97E0C57264E76340001EE39 /* loginScreen3.png in Resources */,
@@ -863,6 +865,7 @@
 				D97E0C5E264E76340001EE39 /* searchScreen2.png in Resources */,
 				D97E0C62264E76340001EE39 /* mainScreen.png in Resources */,
 				D97E0C63264E76340001EE39 /* loginScreen2.png in Resources */,
+				D97E0C7E264F1DE30001EE39 /* dataSet2.png in Resources */,
 				D97E0C73264E84230001EE39 /* loginScreen.gif in Resources */,
 				D97E0C6C264E80120001EE39 /* searchScreen.gif in Resources */,
 				D97E0C58264E76340001EE39 /* mainScreen1.png in Resources */,
@@ -952,6 +955,7 @@
 				D9DBFB0A264995F300BFB61B /* SearchApi.swift in Sources */,
 				D9DBFB2B264AE40300BFB61B /* MyProfileController.swift in Sources */,
 				D9DBFB36264AF96100BFB61B /* LatestCollectionApi.swift in Sources */,
+				D97E0C77264F0C950001EE39 /* MyProfileViewModel.swift in Sources */,
 				D97E0C48264E5F860001EE39 /* UIView+extension.swift in Sources */,
 				D909C7A52642BA2500713750 /* MainListViewController.swift in Sources */,
 				D9DBFAB12645B63000BFB61B /* AppError.swift in Sources */,
@@ -971,7 +975,6 @@
 				D97E0C37264D855C0001EE39 /* UserSearchModel.swift in Sources */,
 				D9DBFB42264B92E400BFB61B /* LatestModel.swift in Sources */,
 				D97E0C2D264D774A0001EE39 /* CollectionTableViewCell.swift in Sources */,
-				D9DBFB192649D56700BFB61B /* DetailsViewModel.swift in Sources */,
 				D9DBFB032649895900BFB61B /* SplashCollectionApi.swift in Sources */,
 				D9DBFAB92645D10E00BFB61B /* CollectionViewCategoryCell.swift in Sources */,
 				D9DBFB49264C2EAE00BFB61B /* LicenseScreenViewModel.swift in Sources */,
@@ -989,6 +992,7 @@
 				D9DBFB52264C3E6400BFB61B /* TitleTableCell.swift in Sources */,
 				D97E0C40264DC4D30001EE39 /* LoginViewModel.swift in Sources */,
 				D9DBFAC62649820700BFB61B /* SearchViewController.swift in Sources */,
+				D97E0C7A264F19240001EE39 /* FileHandler.swift in Sources */,
 				D9DBFB4C264C342600BFB61B /* ContactFunctionHandler.swift in Sources */,
 				D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */,
 				D9B3647F2645951D0047707E /* ParameterEncoder.swift in Sources */,

@@ -12,9 +12,11 @@ class LoginViewModel {
     
     let viewController: UIViewController
     let userName: String = ""
+    let storyboard: UIStoryboard
     
     init(viewController: UIViewController) {
         self.viewController = viewController
+        self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
     }
 
     func signIn(email: String, password: String) {
@@ -31,9 +33,14 @@ class LoginViewModel {
     }
     
     func openTheProfilePage() {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let profileController = storyboard.instantiateViewController(identifier: "MyProfileController") as? MyProfileController {
             self.viewController.present(profileController, animated: true, completion: nil)
+        }
+    }
+    
+    func openRegisterPage() {
+        if let registerController = storyboard.instantiateViewController(identifier: "RegisterViewController") as? RegisterViewController {
+            self.viewController.present(registerController, animated: true, completion: nil)
         }
     }
 }

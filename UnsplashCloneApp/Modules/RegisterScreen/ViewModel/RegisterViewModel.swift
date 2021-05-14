@@ -42,8 +42,6 @@ class RegisterViewModel {
                 print("User signs up successfully")
                 let data = ["email": user.email, "firstName": user.firstName, "lastName": user.lastName, "password": user.password, "userName": user.userName]
                 self.db.collection("users").addDocument(data: data)
-                self.viewController.showAlert(title: "You successfully signed up", message: "Welcome Unsplash App", buttons: [.ok]) { _, _ in }
-                print("Create page")
                 self.openTheProfilePage()
             }
         }
