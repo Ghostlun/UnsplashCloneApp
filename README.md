@@ -30,21 +30,24 @@ margin = 20/>
 <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/mainScreen1.png" width = 200 height = 410
 margin = 20/>
 <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/licenseScreen.png" width = 200 height = 410/>
+ <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/mainScreen.gif" width = 200 height = 410/>
 </p>
+
 
 [Details Screen]
 <div>This is a detail Screen. Once user wants to see picture cleary, then you can click the image, image will display</div>
 <p align="center">
-<img src = "https://github.com/Ghostlun/NewsAppDemoVersion/blob/master/NewsDemo/Resources/Github%20source/detailImage.png" width = 200 height = 410/>
-<img src = "https://github.com/Ghostlun/NewsAppDemoVersion/blob/master/NewsDemo/Resources/Github%20source/detailsScreen.gif" width = 200 height = 410/>
+"https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/detailsScreen.png" width = 200 height = 410/>
  </p>
 
 [Search Image Screen]
 
 <div>This is a Search Screen. User can search photos, users, collections by keyword,</div>
 <p align="center">
-<img src = "https://github.com/Ghostlun/NewsAppDemoVersion/blob/master/NewsDemo/Resources/Github%20source/detailsOptions.png" width = 200 height = 410/>
-<img src = "https://github.com/Ghostlun/NewsAppDemoVersion/blob/master/NewsDemo/Resources/Github%20source/secondScreen.gif" width = 200 height = 410/>
+ <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen.png" width = 200 height = 410/>
+ <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen1.png" width = 200 height = 410/>
+  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen2.png" width = 200 height = 410/>
+  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen.gif" width = 200 height = 410/>
  </p>
 
 
@@ -52,16 +55,19 @@ margin = 20/>
 
 <div>User can save their image into profile</div>
 <p align="center">
-<img src = "https://github.com/Ghostlun/NewsAppDemoVersion/blob/master/NewsDemo/Resources/Github%20source/detailsOption.png" width = 200 height = 410/>
-<img src = "https://github.com/Ghostlun/NewsAppDemoVersion/blob/master/NewsDemo/Resources/Github%20source/thirdScreen.gif" width = 200 height = 410/>
+  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/collectionScreen.gif" width = 200 height = 410/>
+  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/collectionScreen.png" width = 200 height = 410/>
+   <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/collectionScreen1.png" width = 200 height = 410/>
 <p align="center">
 
 [Login and Register Screen]
 
 <div>User login and register data account</div>
 <p align="center">
-<img src = "https://github.com/Ghostlun/NewsAppDemoVersion/blob/master/NewsDemo/Resources/Github%20source/detailsOption.png" width = 200 height = 410/>
-<img src = "https://github.com/Ghostlun/NewsAppDemoVersion/blob/master/NewsDemo/Resources/Github%20source/thirdScreen.gif" width = 200 height = 410/>
+<img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/loginScreen.gif" width = 200 height = 410/>
+<img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/loginScreen1.png" width = 200 height = 410/>
+ <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/loginScreen2.png" width = 200 height = 410/>
+ <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/loginScreen3.png" width = 200 height = 410/>
 <p align="center">
 
 
