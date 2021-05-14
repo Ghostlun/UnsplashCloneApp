@@ -37,7 +37,7 @@ margin = 20/>
 [Details Screen]
 <div>This is a detail Screen. Once user wants to see picture cleary, then you can click the image, image will display</div>
 <p align="center">
-"https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/detailsScreen.png" width = 200 height = 410/>
+ <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/detailsScreen.png" width = 200 height = 410/>
  </p>
 
 [Search Image Screen]
@@ -47,7 +47,7 @@ margin = 20/>
  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen.png" width = 200 height = 410/>
  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen1.png" width = 200 height = 410/>
   <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen2.png" width = 200 height = 410/>
-  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen.gif" width = 200 height = 410/>
+  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/collectionScreen.gif" width = 200 height = 410/>
  </p>
 
 
@@ -55,7 +55,7 @@ margin = 20/>
 
 <div>User can save their image into profile</div>
 <p align="center">
-  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/collectionScreen.gif" width = 200 height = 410/>
+  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen.gif" width = 200 height = 410/>
   <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/collectionScreen.png" width = 200 height = 410/>
    <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/collectionScreen1.png" width = 200 height = 410/>
 <p align="center">
