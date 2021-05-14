@@ -1,10 +1,10 @@
 # UnsplashCloneApp
-<img align="left" src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/appstore.png" width = 30 height = 30/> This is my NewsAppDemoVersion
+<img align="left" src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/appstore.png" width = 30 height = 30/> This is my UnsplashCloneApp
 
 <h4>App Information </h4>
 It is Unsplash Demo applications. It is composed four sections
 It follows MVVM Pattern
-User can get picture,collection, user information from the Unsplash Api and also, you can use login serverice using Firebase clouding service
+User can get picture,collection, user information from the Unsplash Api and also, you can use login service using Firebase clouding service
 
 <h3>API</h3>
 <div><b> Unsplah Api, It provides information about the Unsplash App. Also, it provides login and register service using Firebase <b></div>
@@ -23,7 +23,7 @@ https://firebase.google.com/?gclid=CjwKCAjwv_iEBhASEiwARoemvE8KK2SmUD9AOn9iwWt7g
 <h3>Screen Explanation</h3>
 
 [Main Screen]
-<div>It is composed of collection view and tableView, user can search image by topic keyword, It also dispaly license page</div>
+<div>It is composed of collection view and tableView, user can search image by topic keyword, It also displays license page</div>
 <p align="center">
   <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/mainScreen.gif" width = 200 height = 410/>
  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/mainScreen.png" width = 200 height = 410
@@ -35,7 +35,7 @@ margin = 20/>
 
 
 [Details Screen]
-<div>This is a detail Screen. Once user wants to see picture cleary, then you can click the image, image will display</div>
+<div>This is a detail Screen. Once user wants to see picture, then you can click the image, detailed image will display</div>
 <p align="center">
  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/detailsScreen.png" width = 200 height = 410/>
  </p>
@@ -69,6 +69,15 @@ margin = 20/>
  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/loginScreen2.png" width = 200 height = 410/>
  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/loginScreen3.png" width = 200 height = 410/>
 <p align="center">
+  
+<div>Once you create your ID and Password it will save into FirebaseStore Database</div>
+<p align="center">
+<img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/dataSet1.png" width = 400 height = 410/>
+<img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/dataSet2.png" width = 400 height = 410/>
+<p align="center">
+
+
+
 
 
 
