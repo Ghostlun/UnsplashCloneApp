@@ -16,6 +16,18 @@
 		D909C7AD2642BA2700713750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D909C7AB2642BA2700713750 /* LaunchScreen.storyboard */; };
 		D909C7BF2642F50600713750 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C7BE2642F50500713750 /* SplashModel.swift */; };
 		D97E0C27264CAAFA0001EE39 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C26264CAAFA0001EE39 /* RegisterViewModel.swift */; };
+		D97E0C2D264D774A0001EE39 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C2B264D774A0001EE39 /* CollectionTableViewCell.swift */; };
+		D97E0C2E264D774A0001EE39 /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C2C264D774A0001EE39 /* CollectionTableViewCell.xib */; };
+		D97E0C31264D77670001EE39 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C2F264D77670001EE39 /* UsersTableViewCell.swift */; };
+		D97E0C32264D77670001EE39 /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C30264D77670001EE39 /* UsersTableViewCell.xib */; };
+		D97E0C35264D847E0001EE39 /* CollectionSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C34264D847E0001EE39 /* CollectionSearchModel.swift */; };
+		D97E0C37264D855C0001EE39 /* UserSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C36264D855C0001EE39 /* UserSearchModel.swift */; };
+		D97E0C3A264D884E0001EE39 /* CollectionTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C39264D884E0001EE39 /* CollectionTableCellViewModel.swift */; };
+		D97E0C3D264D88800001EE39 /* UserTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C3C264D88800001EE39 /* UserTableCellViewModel.swift */; };
+		D97E0C40264DC4D30001EE39 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C3F264DC4D30001EE39 /* LoginViewModel.swift */; };
+		D97E0C42264E41B40001EE39 /* TopicSplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C41264E41B40001EE39 /* TopicSplashModel.swift */; };
+		D97E0C46264E52380001EE39 /* TopicDataCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C45264E52380001EE39 /* TopicDataCellViewModel.swift */; };
+		D97E0C48264E5F860001EE39 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C47264E5F860001EE39 /* UIView+extension.swift */; };
 		D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647B264590E40047707E /* MainListViewModel.swift */; };
 		D9B3647E264592020047707E /* SplashCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3647D264592020047707E /* SplashCellViewModel.swift */; };
 		D9B3647F2645951D0047707E /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3646F264588D40047707E /* ParameterEncoder.swift */; };
@@ -42,7 +54,7 @@
 		D9DBFB20264A5A7200BFB61B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9DBFB1F264A5A7100BFB61B /* GoogleService-Info.plist */; };
 		D9DBFB24264A629700BFB61B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB23264A629700BFB61B /* RegisterViewController.swift */; };
 		D9DBFB28264A630300BFB61B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB27264A630300BFB61B /* LoginController.swift */; };
-		D9DBFB2B264AE40300BFB61B /* MyProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB2A264AE40300BFB61B /* MyProfileScreen.swift */; };
+		D9DBFB2B264AE40300BFB61B /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB2A264AE40300BFB61B /* MyProfileController.swift */; };
 		D9DBFB30264AEE4700BFB61B /* ContributeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB2F264AEE4700BFB61B /* ContributeController.swift */; };
 		D9DBFB33264AF15300BFB61B /* ContributeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB32264AF15300BFB61B /* ContributeViewModel.swift */; };
 		D9DBFB36264AF96100BFB61B /* LatestCollectionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFB35264AF96100BFB61B /* LatestCollectionApi.swift */; };
@@ -75,6 +87,18 @@
 		D909C7AE2642BA2700713750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D909C7BE2642F50500713750 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
 		D97E0C26264CAAFA0001EE39 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		D97E0C2B264D774A0001EE39 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		D97E0C2C264D774A0001EE39 /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
+		D97E0C2F264D77670001EE39 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		D97E0C30264D77670001EE39 /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
+		D97E0C34264D847E0001EE39 /* CollectionSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSearchModel.swift; sourceTree = "<group>"; };
+		D97E0C36264D855C0001EE39 /* UserSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchModel.swift; sourceTree = "<group>"; };
+		D97E0C39264D884E0001EE39 /* CollectionTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableCellViewModel.swift; sourceTree = "<group>"; };
+		D97E0C3C264D88800001EE39 /* UserTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCellViewModel.swift; sourceTree = "<group>"; };
+		D97E0C3F264DC4D30001EE39 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		D97E0C41264E41B40001EE39 /* TopicSplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicSplashModel.swift; sourceTree = "<group>"; };
+		D97E0C45264E52380001EE39 /* TopicDataCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDataCellViewModel.swift; sourceTree = "<group>"; };
+		D97E0C47264E5F860001EE39 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		D9B3646A264588460047707E /* SplashTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashTableViewCell.xib; sourceTree = "<group>"; };
 		D9B3646B264588460047707E /* SplashTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTableViewCell.swift; sourceTree = "<group>"; };
 		D9B3646F264588D40047707E /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
@@ -101,7 +125,7 @@
 		D9DBFB1F264A5A7100BFB61B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9DBFB23264A629700BFB61B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D9DBFB27264A630300BFB61B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		D9DBFB2A264AE40300BFB61B /* MyProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileScreen.swift; sourceTree = "<group>"; };
+		D9DBFB2A264AE40300BFB61B /* MyProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileController.swift; sourceTree = "<group>"; };
 		D9DBFB2F264AEE4700BFB61B /* ContributeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeController.swift; sourceTree = "<group>"; };
 		D9DBFB32264AF15300BFB61B /* ContributeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeViewModel.swift; sourceTree = "<group>"; };
 		D9DBFB35264AF96100BFB61B /* LatestCollectionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCollectionApi.swift; sourceTree = "<group>"; };
@@ -192,7 +216,7 @@
 		D909C7B52642BA3B00713750 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D9DBFB59264C674B00BFB61B /* LoginView */,
+				D9DBFB59264C674B00BFB61B /* LoginShortVersionScreen */,
 				D9DBFB2D264AECE800BFB61B /* ContributeScreen */,
 				D9DBFB29264AE30600BFB61B /* MyProfileScreen */,
 				D9DBFB22264A627C00BFB61B /* RegisterScreen */,
@@ -256,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				D909C7BE2642F50500713750 /* SplashModel.swift */,
+				D97E0C41264E41B40001EE39 /* TopicSplashModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +288,7 @@
 		D909C7BC2642F47E00713750 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D97E0C44264E52150001EE39 /* TopictableCellViewModel */,
 				D9B3647A26458F640047707E /* TableCellViewModel */,
 				D9B3647926458F5B0047707E /* MainListViewModel */,
 			);
@@ -275,6 +301,40 @@
 				D97E0C26264CAAFA0001EE39 /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D97E0C28264D76920001EE39 /* CollectionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				D97E0C2B264D774A0001EE39 /* CollectionTableViewCell.swift */,
+				D97E0C2C264D774A0001EE39 /* CollectionTableViewCell.xib */,
+			);
+			path = CollectionsCell;
+			sourceTree = "<group>";
+		};
+		D97E0C2A264D76E90001EE39 /* UsersCell */ = {
+			isa = PBXGroup;
+			children = (
+				D97E0C2F264D77670001EE39 /* UsersTableViewCell.swift */,
+				D97E0C30264D77670001EE39 /* UsersTableViewCell.xib */,
+			);
+			path = UsersCell;
+			sourceTree = "<group>";
+		};
+		D97E0C3E264DC4910001EE39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D97E0C3F264DC4D30001EE39 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D97E0C44264E52150001EE39 /* TopictableCellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D97E0C45264E52380001EE39 /* TopicDataCellViewModel.swift */,
+			);
+			path = TopictableCellViewModel;
 			sourceTree = "<group>";
 		};
 		D9B36467264588390047707E /* EndPoint */ = {
@@ -303,6 +363,7 @@
 				D9B3646D264588D40047707E /* NetworkLayer */,
 				D9DBFAAB26459C2D00BFB61B /* CellReusable+Extension.swift */,
 				D9DBFAB02645B63000BFB61B /* AppError.swift */,
+				D97E0C47264E5F860001EE39 /* UIView+extension.swift */,
 				D9DBFB4D264C373A00BFB61B /* UIViewController+Ext.swift */,
 			);
 			path = "Reusuable Components";
@@ -385,6 +446,8 @@
 		D9DBFB052649956D00BFB61B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D97E0C2A264D76E90001EE39 /* UsersCell */,
+				D97E0C28264D76920001EE39 /* CollectionsCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,6 +457,8 @@
 			children = (
 				D9DBFB0B2649999700BFB61B /* SearchViewModel.swift */,
 				D9DBFB0F2649BDA200BFB61B /* SearchTableViewModel.swift */,
+				D97E0C39264D884E0001EE39 /* CollectionTableCellViewModel.swift */,
+				D97E0C3C264D88800001EE39 /* UserTableCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -402,6 +467,8 @@
 			isa = PBXGroup;
 			children = (
 				D9DBFB0D26499AAC00BFB61B /* SearchModel.swift */,
+				D97E0C34264D847E0001EE39 /* CollectionSearchModel.swift */,
+				D97E0C36264D855C0001EE39 /* UserSearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -468,6 +535,7 @@
 		D9DBFB21264A626F00BFB61B /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				D97E0C3E264DC4910001EE39 /* ViewModel */,
 				D9DBFB26264A62E600BFB61B /* Controller */,
 			);
 			path = LoginScreen;
@@ -510,7 +578,7 @@
 		D9DBFB2C264AE40B00BFB61B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D9DBFB2A264AE40300BFB61B /* MyProfileScreen.swift */,
+				D9DBFB2A264AE40300BFB61B /* MyProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -625,13 +693,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D9DBFB59264C674B00BFB61B /* LoginView */ = {
+		D9DBFB59264C674B00BFB61B /* LoginShortVersionScreen */ = {
 			isa = PBXGroup;
 			children = (
 				D9DBFB5D264C759300BFB61B /* Controller */,
 				D9DBFB5A264C718B00BFB61B /* View */,
 			);
-			path = LoginView;
+			path = LoginShortVersionScreen;
 			sourceTree = "<group>";
 		};
 		D9DBFB5A264C718B00BFB61B /* View */ = {
@@ -712,7 +780,9 @@
 			files = (
 				D909C7AD2642BA2700713750 /* LaunchScreen.storyboard in Resources */,
 				D909C7AA2642BA2700713750 /* Assets.xcassets in Resources */,
+				D97E0C32264D77670001EE39 /* UsersTableViewCell.xib in Resources */,
 				D9DBFB20264A5A7200BFB61B /* GoogleService-Info.plist in Resources */,
+				D97E0C2E264D774A0001EE39 /* CollectionTableViewCell.xib in Resources */,
 				D9DBFAAE2645A70000BFB61B /* SplashTableViewCell.xib in Resources */,
 				D9DBFB5C264C71A300BFB61B /* LoginView.storyboard in Resources */,
 				D909C7A82642BA2500713750 /* Main.storyboard in Resources */,
@@ -777,7 +847,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = " if which swiftlint >/dev/null; then\n  swiftlint\n else\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n fi\n";
+			shellScript = "   if which swiftlint >/dev/null; then\n   swiftlint\n   else\n   echo \"warning: SwiftLint not installed, download from  https://github.com/realm/SwiftLint\"\n   fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -790,18 +860,22 @@
 				D9DBFB55264C4A3400BFB61B /* AlertProtocol.swift in Sources */,
 				D9DBFB33264AF15300BFB61B /* ContributeViewModel.swift in Sources */,
 				D9DBFB0C2649999800BFB61B /* SearchViewModel.swift in Sources */,
+				D97E0C42264E41B40001EE39 /* TopicSplashModel.swift in Sources */,
 				D9DBFB30264AEE4700BFB61B /* ContributeController.swift in Sources */,
 				D9DBFB3A264B0F9A00BFB61B /* CollectionCellViewModel.swift in Sources */,
+				D97E0C31264D77670001EE39 /* UsersTableViewCell.swift in Sources */,
 				D9B364802645951F0047707E /* URLParameterEncoder.swift in Sources */,
 				D9DBFB0A264995F300BFB61B /* SearchApi.swift in Sources */,
-				D9DBFB2B264AE40300BFB61B /* MyProfileScreen.swift in Sources */,
+				D9DBFB2B264AE40300BFB61B /* MyProfileController.swift in Sources */,
 				D9DBFB36264AF96100BFB61B /* LatestCollectionApi.swift in Sources */,
+				D97E0C48264E5F860001EE39 /* UIView+extension.swift in Sources */,
 				D909C7A52642BA2500713750 /* MainListViewController.swift in Sources */,
 				D9DBFAB12645B63000BFB61B /* AppError.swift in Sources */,
 				D9DBFB1C264A272F00BFB61B /* ImageDetailsInformation.swift in Sources */,
 				D9DBFAAC26459C2D00BFB61B /* CellReusable+Extension.swift in Sources */,
 				D909C7A12642BA2500713750 /* AppDelegate.swift in Sources */,
 				D97E0C27264CAAFA0001EE39 /* RegisterViewModel.swift in Sources */,
+				D97E0C35264D847E0001EE39 /* CollectionSearchModel.swift in Sources */,
 				D9DBFB4E264C373A00BFB61B /* UIViewController+Ext.swift in Sources */,
 				D9DBFAAD26459CF200BFB61B /* SplashTableViewCell.swift in Sources */,
 				D909C7BF2642F50600713750 /* SplashModel.swift in Sources */,
@@ -810,20 +884,26 @@
 				D9DBFB58264C5D6200BFB61B /* User.swift in Sources */,
 				D9DBFB28264A630300BFB61B /* LoginController.swift in Sources */,
 				D9DBFB132649CF5A00BFB61B /* DetailsViewController.swift in Sources */,
+				D97E0C37264D855C0001EE39 /* UserSearchModel.swift in Sources */,
 				D9DBFB42264B92E400BFB61B /* LatestModel.swift in Sources */,
+				D97E0C2D264D774A0001EE39 /* CollectionTableViewCell.swift in Sources */,
 				D9DBFB192649D56700BFB61B /* DetailsViewModel.swift in Sources */,
 				D9DBFB032649895900BFB61B /* SplashCollectionApi.swift in Sources */,
 				D9DBFAB92645D10E00BFB61B /* CollectionViewCategoryCell.swift in Sources */,
 				D9DBFB49264C2EAE00BFB61B /* LicenseScreenViewModel.swift in Sources */,
 				D9B36481264595230047707E /* JSONParameterEncoder.swift in Sources */,
+				D97E0C3A264D884E0001EE39 /* CollectionTableCellViewModel.swift in Sources */,
 				D9DBFB45264C2CFA00BFB61B /* LicenseViewController.swift in Sources */,
 				D9DBFB3D264B182900BFB61B /* LatestCollectionCellView.swift in Sources */,
+				D97E0C46264E52380001EE39 /* TopicDataCellViewModel.swift in Sources */,
 				D9B36483264595290047707E /* HTTPTask.swift in Sources */,
 				D9B364842645952C0047707E /* HTTPMethod.swift in Sources */,
 				D9B3647E264592020047707E /* SplashCellViewModel.swift in Sources */,
 				D9DBFB5F264C75BE00BFB61B /* LoginSubviewController.swift in Sources */,
+				D97E0C3D264D88800001EE39 /* UserTableCellViewModel.swift in Sources */,
 				D9DBFB0E26499AAC00BFB61B /* SearchModel.swift in Sources */,
 				D9DBFB52264C3E6400BFB61B /* TitleTableCell.swift in Sources */,
+				D97E0C40264DC4D30001EE39 /* LoginViewModel.swift in Sources */,
 				D9DBFAC62649820700BFB61B /* SearchViewController.swift in Sources */,
 				D9DBFB4C264C342600BFB61B /* ContactFunctionHandler.swift in Sources */,
 				D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */,

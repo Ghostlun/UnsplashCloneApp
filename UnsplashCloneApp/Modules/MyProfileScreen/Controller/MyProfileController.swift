@@ -1,5 +1,5 @@
 //
-//  MyProfileScreen.swift
+//  MyProfileController.swift
 //  UnsplashCloneApp
 //
 //  Created by Yoonha Kim on 5/11/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyProfileScreen: UIViewController {
+class MyProfileController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

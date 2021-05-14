@@ -26,10 +26,8 @@ struct PhotoResult: Decodable {
     var width: Int
     var height: Int
     var description: String?
-    
     var links: Links
     var urls: Urls
-//    var user: Users
     
     enum CodingKeys: String, CodingKey {
         case id, width, height, links, urls

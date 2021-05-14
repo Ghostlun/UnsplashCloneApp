@@ -10,28 +10,28 @@ import Foundation
 enum SplashCollectionApi: EndPoint {
     
     case searchByCategory(category: String)
+    case searchByDefault
     
-//    https://api.unsplash.com/topics?page=1&id_or_slug=wallpapers&client_id=2e5zRIIUowkNDy00Hh41zKFlmpyFtmBja6DuA-CIn88
+//  Default address https://api.unsplash.com/topics?page=1&id_or_slug=wallpapers&client_id=2e5zRIIUowkNDy00Hh41zKFlmpyFtmBja6DuA-CIn88
+
+//  Search Address https://api.unsplash.com/topics/wallpapers/photos?page=1&client_id=2e5zRIIUowkNDy00Hh41zKFlmpyFtmBja6DuA-CIn88
     
+//    https://api.unsplash.com/topics/Wallpapers/photos?page=1&client_id=2e5zRIIUowkNDy00Hh41zKFlmpyFtmBja6DuA-CIn88
     var task: HTTPTask {
         .request
     }
-
-    var baseURL: URL {
-        guard let url = URL(string: "https://api.unsplash.com/collections/?client_id=2e5zRIIUowkNDy00Hh41zKFlmpyFtmBja6DuA-CIn88" ) else {
-            fatalError("URL won't work")
-        }
-        return url
-    }
     
     var baseUrlOption: String {
-        "https://api.unsplash.com/topics?"
+        "https://api.unsplash.com"
     }
     
     var path: String {
         switch self {
         case .searchByCategory(let category):
-            return "page=\(1)&id_or_slug=\(category)"
+            return "/topics/\(category)/photos?page=1"
+            
+        case .searchByDefault:
+            return "/topics?page=1"
         }
     }
     

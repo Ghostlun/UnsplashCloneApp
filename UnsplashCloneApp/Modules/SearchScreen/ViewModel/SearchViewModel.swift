@@ -15,6 +15,8 @@ protocol SearchViewModelProtocol: AnyObject {
 class SearchViewModel {
 
     private var dataSource: [PhotoResult]
+    private var collectionDataSource: [CollectionResult]
+    private var userDataSource: [UserResult]
     
     private weak var delegate: SearchViewModelProtocol?
     
@@ -23,14 +25,37 @@ class SearchViewModel {
     init(delegate: SearchViewModelProtocol) {
         self.delegate = delegate
         self.dataSource = []
+        self.collectionDataSource = []
+        self.userDataSource = []
     }
     
     func photoResult(at index: Int) -> SplashCellViewModelProtocol {
         SearchTableViewModel(searchResultModel: dataSource[index])
     }
     
-    func numbersOfTableViewRows() -> Int {
-        dataSource.count
+    func collectionResult(at index: Int) -> CollectionTableCellViewModelProtocol {
+        CollectionTableCellViewModel(collectionResult: collectionDataSource[index])
+    }
+    
+    func userResult(at index: Int) -> UserTableCellViewModelProtocol {
+        UserTableCellViewModel(userResult: userDataSource[index])
+    }
+        
+    func numbersOfTableViewRows(type: Int) -> Int {
+        switch type {
+        case 0:
+            return dataSource.count
+            
+        case 1:
+            return collectionDataSource.count
+            
+        case 2:
+            return userDataSource.count
+
+        default:
+            print("Error")
+        }
+        return 0
     }
     
     func openDetailsScreen(_ indexPath: IndexPath) -> DetailsViewController {
@@ -45,16 +70,46 @@ class SearchViewModel {
         return DetailsViewController()
     }
     
-    func fetchItem(keyword: String) {
-        self.router.request(SearchApi.search(query: keyword)) { [weak self] (result: Result<SearchModel, AppError>) in
+    func fetchItem(keyword: String, type: Int) {
+        
+        switch type {
+        case 0:
+            self.router.request(SearchApi.searchPhotos(query: keyword)) { [weak self] (result: Result<SearchModel, AppError>) in
             switch result {
             case .success(let splashData):
                 self?.dataSource = splashData.results
                 self?.delegate?.reloadData()
 
             case .failure(let error):
-                print(error)
+                print(error)}
             }
+            
+        case 1:
+            self.router.request(SearchApi.searchCollections(query: keyword)) { [weak self] (result: Result<CollectionSearchModel, AppError>) in
+            switch result {
+            case .success(let data):
+                self?.collectionDataSource = data.results
+                self?.delegate?.reloadData()
+                print(data)
+
+            case .failure(let error):
+                print(error)}
+            }
+            
+        case 2:
+            self.router.request(SearchApi.searchUsers(query: keyword)) { [weak self] (result: Result<UserSearchModel, AppError>) in
+            switch result {
+            case .success(let data):
+                self?.userDataSource = data.results
+                self?.delegate?.reloadData()
+                print(data)
+
+            case .failure(let error):
+                print(error)}
+            }
+            
+        default:
+            print("None")
         }
-    }
+}
 }

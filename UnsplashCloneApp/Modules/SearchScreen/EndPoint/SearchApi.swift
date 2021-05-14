@@ -11,10 +11,12 @@ import Foundation
 
 enum SearchApi: EndPoint {
     
-    case search(query: String)
+    case searchPhotos(query: String)
+    case searchCollections (query: String)
+    case searchUsers (query: String)
     
     var environmentBaseUrl: String {
-        "https://api.unsplash.com/search/photos?page=1"
+        "https://api.unsplash.com/search"
     }
     
     var task: HTTPTask {
@@ -30,8 +32,14 @@ enum SearchApi: EndPoint {
     
     var path: String {
         switch self {
-        case .search(let query):
-            return "&query=\(query)"
+        case .searchPhotos(let query):
+            return "/photos?page=1&query=\(query)"
+            
+        case .searchCollections(let query):
+            return "/collections?page=1&query=\(query)"
+
+        case .searchUsers(let query):
+            return "/users?page=1&query=\(query)"
         }
     }
     

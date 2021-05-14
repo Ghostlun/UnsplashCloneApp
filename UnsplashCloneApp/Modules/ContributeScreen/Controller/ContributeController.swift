@@ -9,7 +9,6 @@ import UIKit
 
 class ContributeController: UIViewController {
     
-    @IBOutlet private weak var contributeImageView: UIImageView!
     @IBOutlet private weak var latestCollectionView: UICollectionView! {
         didSet {
             self.latestCollectionView.delegate = self
@@ -49,7 +48,6 @@ extension ContributeController: UICollectionViewDelegate, UICollectionViewDataSo
 extension ContributeController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let targetImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            contributeImageView.image = targetImage
         }
         picker.dismiss(animated: true, completion: nil)
     }

@@ -18,15 +18,17 @@ class MainListViewModel {
     
     weak var delegate: MainViewModelProtocol?
     
-    private var dataSource: [SplashCellViewModelProtocol] {
+    private var mainDataSource: [SplashCellViewModelProtocol] {
         didSet {
             self.delegate?.reloadData()
         }
     }
     
+    var isMain = true
+    
     init(delegate: MainViewModelProtocol) {
         self.delegate = delegate
-        self.dataSource = []
+        self.mainDataSource = []
     }
     
     var collectionViewDataSource: [String] = ["Editorial", "Wallpapers", "Nature", "People", "Architecture", "Current Events", "Businnes & work", "Experimental", "Fashion", "Film"]
@@ -43,11 +45,11 @@ class MainListViewModel {
     }
     
     func numberOfRows() -> Int {
-        self.dataSource.count
+        self.mainDataSource.count
     }
     
     func photo(at index: Int) -> SplashCellViewModelProtocol {
-        self.dataSource[index]
+        self.mainDataSource[index]
     }
     
     func openDetailsScreen(_ indexPath: IndexPath) -> DetailsViewController {
@@ -62,16 +64,34 @@ class MainListViewModel {
         return DetailsViewController()
     }
     
-    func fetchPhotoDetails(category: String = "Editorial") {
-        print(category)
-        self.router.request(SplashCollectionApi.searchByCategory(category: category)) { [weak self] (result: Result<SplashModels, AppError>) in
+    func fetchInitialData() {
+        isMain = true
+        self.router.request(SplashCollectionApi.searchByDefault) { [weak self] (result: Result<SplashModels, AppError>) in
             switch result {
             case .success(let splashData):
                 let compactedData = splashData.compactMap {
                     SplashCellViewModel(splashModel: $0)
                 }
                 self?.delegate?.reloadData()
-                self?.dataSource = compactedData
+                self?.mainDataSource = compactedData
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func fetchDataByCategory(category: String) {
+        isMain = false
+        let categoryLowerCase = category.lowercased()
+        self.router.request(SplashCollectionApi.searchByCategory(category: categoryLowerCase)) { [weak self] (result: Result<TopicSplashModels, AppError>) in
+            switch result {
+            case .success(let splashData):
+                let compactedData = splashData.compactMap {
+                    TopicDataCellViewModel(topicSplashModel: $0)
+                }
+                self?.delegate?.reloadData()
+                self?.mainDataSource = compactedData
                 
             case .failure(let error):
                 print(error)

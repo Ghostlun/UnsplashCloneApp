@@ -5,11 +5,12 @@
 //  Created by Yoonha Kim on 5/12/21.
 //
 
+import FirebaseAuth
 import UIKit
 
 class LicenseViewController: UIViewController {
     
-    @IBOutlet private weak var signInButton: UIButton!
+    @IBOutlet private weak var signOutButton: UIButton!
     @IBOutlet private weak var recommendButton: UIButton!
     @IBOutlet private weak var reviewButton: UIButton!
     @IBOutlet private weak var feedbackButton: UIButton!
@@ -21,7 +22,9 @@ class LicenseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        signInButton.isHidden = true
+        if checkUser() == false {
+            signOutButton.isHidden = true
+        }
         self.navigationItem.leftBarButtonItem = nil
     }
     
@@ -47,7 +50,16 @@ class LicenseViewController: UIViewController {
     }
     
     @IBAction private func done() {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction private func signOutUser() {
+        do {
+            try Auth.auth().signOut()
+            self.dismiss(animated: true, completion: nil)
+        } catch {
+            print("Sign out failed")
+        }
     }
 }
 

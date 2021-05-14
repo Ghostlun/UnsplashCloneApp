@@ -31,7 +31,7 @@ class MainListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Unsplash"
-        self.mainListViewModel.fetchPhotoDetails()
+        self.mainListViewModel.fetchInitialData()
     }
 }
 
@@ -43,12 +43,13 @@ extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let sendData = self.mainListViewModel.photo(at: indexPath.row)
-
+        if mainListViewModel.isMain {
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableCell.reuseIdentifier, for: indexPath) as? TitleTableCell else { return UITableViewCell()
             }
             cell.configure(configurator: sendData)
             return cell
+        }
         }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SplashTableViewCell.reuseIdentifier, for: indexPath) as? SplashTableViewCell else { return UITableViewCell() }
     
@@ -79,7 +80,7 @@ extension MainListViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = mainListViewModel.collectionViewDataSource[indexPath.row]
         print("Did Select \(category)")
-        mainListViewModel.fetchPhotoDetails(category: category)
+        mainListViewModel.fetchDataByCategory(category: category)
     }
 }
 

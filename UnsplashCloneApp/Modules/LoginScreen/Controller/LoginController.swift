@@ -18,20 +18,18 @@ class LoginController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var signIn: UIButton!
     
+    lazy var loginViewModel = LoginViewModel(viewController: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if checkUser() {
+            loginViewModel.openTheProfilePage()
+        }
     }
     
     @IBAction private func loginButtonClicked() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        Auth.auth().signIn(withEmail: email, password: password) { user, _ in
-            if user != nil {
-                print("Login Success")
-                self.signIn.setTitle("Sign Out", for: .normal)
-            } else {
-                print("Login Fails")
-            }
-        }
+        loginViewModel.signIn(email: email, password: password)
     }
 }
