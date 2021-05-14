@@ -44,10 +44,10 @@ margin = 20/>
 
 <div>This is a Search Screen. User can search photos, users, collections by keyword,</div>
 <p align="center">
+   <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/collectionScreen.gif" width = 200 height = 410/>
  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen.png" width = 200 height = 410/>
  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen1.png" width = 200 height = 410/>
   <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/searchScreen2.png" width = 200 height = 410/>
-  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/collectionScreen.gif" width = 200 height = 410/>
  </p>
 
 
