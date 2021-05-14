@@ -70,7 +70,7 @@ margin = 20/>
  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/loginScreen3.png" width = 200 height = 410/>
 <p align="center">
   
-<div>Once you create your ID and Password it will save into FirebaseStore Database</div>
+<div>Once you create User Information, it will save into Firebase Store Database</div>
 <p align="center">
 <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/dataSet1.png" width = 400 height = 410/>
 <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/dataSet2.png" width = 400 height = 410/>
