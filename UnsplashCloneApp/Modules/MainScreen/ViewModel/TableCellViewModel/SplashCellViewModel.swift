@@ -14,14 +14,14 @@ protocol SplashCellViewModelProtocol {
     var mainImage: URL { get }
     var shareUrlAddress: String { get }
     var imageName: String { get }
-    var imageInformation: ImageDetailsInformation { get }
+    var imageInformation: URLAddress { get }
     var shareSheetViewController: UIActivityViewController { get }
 }
 
 class SplashCellViewModel: SplashCellViewModelProtocol {
-        
+    
     private var splashModel: SplashModel
-
+    
     init(splashModel: SplashModel) {
         self.splashModel = splashModel
     }
@@ -31,16 +31,17 @@ class SplashCellViewModel: SplashCellViewModelProtocol {
     }
     
     var mainImage: URL {
-        guard let url = URL(string: splashModel.coverPhoto.urls?.raw ?? "https://www.w3schools.com/images/picture.jpg") else { fatalError("No Address") }
+        guard let url = URL(string: splashModel.coverPhoto.urls?.small ?? "https://www.w3schools.com/images/picture.jpg") else { fatalError("No Address") }
         return url
     }
     
     var shareUrlAddress: String {
-        splashModel.coverPhoto.urls?.raw ?? "https://www.w3schools.com/images/picture.jpg"
+        splashModel.coverPhoto.urls?.small ?? "https://www.w3schools.com/images/picture.jpg"
     }
     
-    var imageInformation: ImageDetailsInformation {
-        ImageDetailsInformation()
+    var imageInformation: URLAddress {
+        guard let urls = splashModel.coverPhoto.urls else { fatalError("Failed to unwrapped") }
+        return urls
     }
     
     var imageName: String {

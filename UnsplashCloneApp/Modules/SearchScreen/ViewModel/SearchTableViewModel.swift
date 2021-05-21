@@ -17,11 +17,11 @@ class SearchTableViewModel: SplashCellViewModelProtocol {
     var searchResultModel: PhotoResult
     
     var provider: String {
-         ""
+        "Jacob"
     }
     
-    var imageInformation: ImageDetailsInformation {
-        ImageDetailsInformation()
+    var imageInformation: URLAddress {
+        searchResultModel.urls
     }
     
     var imageName: String {
@@ -29,16 +29,16 @@ class SearchTableViewModel: SplashCellViewModelProtocol {
     }
         
     var shareUrlAddress: String {
-        searchResultModel.urls.full ?? ""
+        searchResultModel.urls.raw
     }
     
     var mainImage: URL {
-        guard let url = URL(string: searchResultModel.urls.full ?? "https://www.w3schools.com/images/picture.jpg") else { fatalError("No Address") }
+        guard let url = URL(string: searchResultModel.urls.raw) else { fatalError("No Address") }
         return url
     }
     
     var sharePictureAddress: String {
-        searchResultModel.urls.full ?? ""
+        searchResultModel.urls.raw
     }
     
     var shareSheetViewController: UIActivityViewController {

@@ -9,7 +9,7 @@ import Foundation
 
 struct LatestModel: Decodable {
     var id: String?
-    var urls: Urls?
+    var urls: URLAddress?
     var links: Links?
     var user: Users?
     var description: String?

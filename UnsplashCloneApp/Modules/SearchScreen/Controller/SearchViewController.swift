@@ -30,15 +30,20 @@ class SearchViewController: UIViewController {
     var optionType: String = "Main"
     
     lazy var searchViewModel = SearchViewModel(delegate: self)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
 extension SearchViewController: UISearchBarDelegate {
-        
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchViewModel.fetchItem(keyword: searchBar.text ?? "", type: searchBar.selectedScopeButtonIndex )
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         searchViewModel.fetchItem(keyword: searchBar.text ?? "", type: searchBar.selectedScopeButtonIndex )
         tableView.reloadData()
     }
@@ -73,20 +78,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             print("error")
         }
-        
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Cell clicked")
         navigationController?.pushViewController(searchViewModel.openDetailsScreen(indexPath), animated: true)
     }
 }
 
 extension SearchViewController: SearchViewModelProtocol {
-        func reloadData() {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
+    }
 }

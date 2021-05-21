@@ -12,7 +12,7 @@
 import FirebaseAuth
 import UIKit
 
-class LoginController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField! {
@@ -27,7 +27,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if checkUser() {
-            loginViewModel.openTheProfilePage()
+            self.performSegue(withIdentifier: "openProfile", sender: nil)
         }
     }
     
@@ -35,5 +35,7 @@ class LoginController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         loginViewModel.signIn(email: email, password: password)
+        self.navigationController?.popViewController(animated: true)
+        self.performSegue(withIdentifier: "openProfile", sender: nil)
     }
 }

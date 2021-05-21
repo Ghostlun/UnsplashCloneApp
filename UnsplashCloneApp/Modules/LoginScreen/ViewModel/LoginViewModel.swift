@@ -23,7 +23,6 @@ class LoginViewModel {
     Auth.auth().signIn(withEmail: email, password: password) { user, _ in
         if user != nil {
             print("Login Success")
-            self.openTheProfilePage()
         } else {
             self.viewController.showAlert(title: "Incorrect Id and Password", message: "Please check id and password", buttons: [.ok]) { _, _ in }
             
@@ -33,8 +32,8 @@ class LoginViewModel {
     }
     
     func openTheProfilePage() {
-        if let profileController = storyboard.instantiateViewController(identifier: "MyProfileController") as? MyProfileController {
-            self.viewController.present(profileController, animated: true, completion: nil)
+        if let profileController = storyboard.instantiateViewController(identifier: "MyProfileViewController") as? MyProfileViewController {
+            self.viewController.navigationController?.pushViewController(profileController, animated: true)
         }
     }
     

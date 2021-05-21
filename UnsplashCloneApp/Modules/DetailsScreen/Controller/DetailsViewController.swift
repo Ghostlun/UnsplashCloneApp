@@ -12,20 +12,43 @@ class DetailsViewController: UIViewController, CellReusable {
     @IBOutlet private weak var mainImageView: UIImageView!
   
     var detailsData: SplashCellViewModelProtocol?
+    var detailsViewModel: DetailsViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = detailsData?.imageName ?? ""
         guard let detailsData = detailsData else { return }
-        configure(with: detailsData)
+        self.detailsViewModel = DetailsViewModel(detailsData: detailsData, viewController: self)
+        configure()
+
     }
     
-    func configure(with information: SplashCellViewModelProtocol) {
-        mainImageView.sd_setImage(with: information.mainImage)
+    func configure() {
+        mainImageView.sd_setImage(with: detailsViewModel?.imageUrlSomething())
     }
     
     @IBAction private func showActivity() {
         guard let view = detailsData?.shareSheetViewController else { return }
         self.present(view, animated: true, completion: nil)
+    }
+    
+    @IBAction private func likeButtonClicked() {
+        if checkUser() {
+            detailsViewModel?.likeButtonClicked()
+    } else {
+            performSegue(withIdentifier: "openLoginSubView", sender: nil)
+        }
+    }
+    
+    @IBAction private func downloadImage() {
+        if checkUser() {
+            detailsViewModel?.downloadImage()
+        } else {
+            performSegue(withIdentifier: "openLoginSubView", sender: nil)
+        }
+    }
+    
+    @IBAction private func openDetailsSubView() {
+        performSegue(withIdentifier: "openDetailsSubview", sender: nil)
     }
 }

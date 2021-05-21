@@ -19,7 +19,7 @@ class RegisterViewModel {
     let db = Firestore.firestore()
 
     func createUser(_ user: User) {
-        Auth.auth().createUser(withEmail: user.email, password: user.password) { _, error in
+        Auth.auth().createUser(withEmail: user.email, password: user.password) { result, error in
             if let error = error as NSError? {
                 switch AuthErrorCode(rawValue: error.code) {
                 case .operationNotAllowed:
@@ -40,8 +40,9 @@ class RegisterViewModel {
             } else {
                 self.viewController.dismiss(animated: true, completion: nil)
                 print("User signs up successfully")
-                let data = ["email": user.email, "firstName": user.firstName, "lastName": user.lastName, "password": user.password, "userName": user.userName]
-                self.db.collection("users").addDocument(data: data)
+
+                let userData = ["email": user.email, "firstName": user.firstName, "lastName": user.lastName, "password": user.password, "userName": user.userName, "uid": result?.user.uid ?? ""]
+                self.db.collection("users").document(result?.user.uid ?? "").setData(userData, merge: true)
                 self.openTheProfilePage()
             }
         }
@@ -55,7 +56,7 @@ class RegisterViewModel {
     
     private func openTheProfilePage() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let profileController = storyboard.instantiateViewController(identifier: "MyProfileController") as? MyProfileController {
+        if let profileController = storyboard.instantiateViewController(identifier: "MyProfileViewController") as? MyProfileViewController {
             self.viewController.present(profileController, animated: true, completion: nil)
         }
     }

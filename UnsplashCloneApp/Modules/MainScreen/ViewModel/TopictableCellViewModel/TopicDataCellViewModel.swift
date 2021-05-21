@@ -33,8 +33,8 @@ class TopicDataCellViewModel: SplashCellViewModelProtocol {
         topicSplashModel.description ?? ""
     }
     
-    var imageInformation: ImageDetailsInformation {
-        ImageDetailsInformation()
+    var imageInformation: URLAddress {
+        topicSplashModel.urls ?? URLAddress(raw: "", full: "", regular: "", small: "", thumb: "")
     }
     
     var shareSheetViewController: UIActivityViewController {

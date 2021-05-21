@@ -15,7 +15,9 @@ protocol MainViewModelProtocol: AnyObject {
 class MainListViewModel {
     
     private let router = Router<SplashCollectionApi>()
-    
+    private let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    private let viewController: UIViewController
+
     weak var delegate: MainViewModelProtocol?
     
     private var mainDataSource: [SplashCellViewModelProtocol] {
@@ -26,8 +28,9 @@ class MainListViewModel {
     
     var isMain = true
     
-    init(delegate: MainViewModelProtocol) {
+    init(delegate: MainViewModelProtocol, viewController: UIViewController) {
         self.delegate = delegate
+        self.viewController = viewController
         self.mainDataSource = []
     }
     
@@ -35,6 +38,16 @@ class MainListViewModel {
     
 //    Hard corded cateogry  " "Health & Wellness", ""Interiors", "Street Photography",
 //    "Technology", "Travel", "Textures & Patterns", "Animals", "Food & Drink", "Athletics"
+    
+    func openFirstTimeView(isNotFirst: Bool) {
+        if isNotFirst == false {
+        if let firstView = storyboard.instantiateViewController(identifier: FirstViewController.reuseIdentifier) as? FirstViewController {
+            viewController.navigationController?.present(firstView, animated: true)
+        } else {
+            print("Can't find storyboard")
+        }
+        }
+    }
     
     func numbersOfCollectionRows() -> Int {
         collectionViewDataSource.count
@@ -50,18 +63,6 @@ class MainListViewModel {
     
     func photo(at index: Int) -> SplashCellViewModelProtocol {
         self.mainDataSource[index]
-    }
-    
-    func openDetailsScreen(_ indexPath: IndexPath) -> DetailsViewController {
-        let detailData = self.photo(at: indexPath.row)
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let detailViewController = storyboard.instantiateViewController(identifier: DetailsViewController.reuseIdentifier) as? DetailsViewController {
-            detailViewController.detailsData = detailData
-            return detailViewController
-        } else {
-            print("Can't find storyboard")
-        }
-        return DetailsViewController()
     }
     
     func fetchInitialData() {

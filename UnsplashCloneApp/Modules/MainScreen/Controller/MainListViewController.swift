@@ -8,7 +8,7 @@
 import UIKit
 
 class MainListViewController: UIViewController {
-    
+        
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             self.tableView.delegate = self
@@ -26,12 +26,14 @@ class MainListViewController: UIViewController {
         }
     }
     
-    lazy var mainListViewModel = MainListViewModel(delegate: self)
+    lazy var mainListViewModel = MainListViewModel(delegate: self, viewController: self)
+    let userDefault = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Unsplash"
         self.mainListViewModel.fetchInitialData()
+        self.mainListViewModel.openFirstTimeView(isNotFirst: userDefault.bool(forKey: "isNotFirst"))
     }
 }
 
@@ -43,22 +45,38 @@ extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let sendData = self.mainListViewModel.photo(at: indexPath.row)
-        if mainListViewModel.isMain {
-        if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableCell.reuseIdentifier, for: indexPath) as? TitleTableCell else { return UITableViewCell()
-            }
-            cell.configure(configurator: sendData)
-            return cell
-        }
-        }
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SplashTableViewCell.reuseIdentifier, for: indexPath) as? SplashTableViewCell else { return UITableViewCell() }
     
         cell.configure(configurator: sendData)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        guard let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: MainTableHeaderCell.reuseIdentifier ) as? MainTableHeaderCell else { return UIView() }
+//        headerCell.configure(configurator: sendData)
+//        return headerCell
+        
+        let header = StretcyHeaderView(frame:(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)))
+        header.myImageView.image = UIImage(named: "headerImage")
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        mainListViewModel.fetchInitialData()
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(mainListViewModel.openDetailsScreen(indexPath), animated: true)
+
+        let detailData = self.mainListViewModel.photo(at: indexPath.row)
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let detailViewController = storyboard.instantiateViewController(identifier: DetailsViewController.reuseIdentifier) as? DetailsViewController
+         else { return }
+        detailViewController.detailsData = detailData
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        300
     }
 }
 
@@ -90,5 +108,12 @@ extension MainListViewController: MainViewModelProtocol {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+}
+
+extension MainListViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let header = tableView.headerView as? StretcyHeaderView else { return }
+        header.scrollViewDidScroll(scrollView: tableView)
     }
 }

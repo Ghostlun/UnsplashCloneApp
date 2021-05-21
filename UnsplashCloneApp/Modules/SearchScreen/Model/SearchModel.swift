@@ -27,7 +27,7 @@ struct PhotoResult: Decodable {
     var height: Int
     var description: String?
     var links: Links
-    var urls: Urls
+    var urls: URLAddress
     
     enum CodingKeys: String, CodingKey {
         case id, width, height, links, urls
@@ -35,14 +35,6 @@ struct PhotoResult: Decodable {
         case updatedAt = "updated_at"
         case promotedAt = "promoted_at"
     }
-}
-
-struct Urls: Decodable {
-    var raw: String?
-    var full: String?
-    var regular: String?
-    var small: String?
-    var thumb: String?
 }
 
 struct Links: Decodable {
