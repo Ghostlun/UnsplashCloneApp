@@ -25,8 +25,8 @@ https://firebase.google.com/?gclid=CjwKCAjwv_iEBhASEiwARoemvE8KK2SmUD9AOn9iwWt7g
 [Main Screen]
 <div>It is composed of collection view and tableView, user can search image by topic keyword, It also displays license page</div>
 <p align="center">
-  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/mainScreen1.gif" width = 200 height = 410/>
- <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/mainScreen.png" width = 200 height = 410
+  <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/mainScreen.gif" width = 200 height = 410/>
+ <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/mainScreen1.gif" width = 200 height = 410
 margin = 20/>
 <img src = "https://github.com/Ghostlun/UnsplashCloneApp/blob/master/UnsplashCloneApp/Resources/Github%20Resource/mainScreen1.png" width = 200 height = 410
 margin = 20/>
