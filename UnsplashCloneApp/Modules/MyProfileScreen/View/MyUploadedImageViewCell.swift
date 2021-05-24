@@ -17,6 +17,5 @@ class MyUploadedImageViewCell: UITableViewCell, CellReusable {
     
     func configure(imageUrl: URL) {
         myUploadedImage.sd_setImage(with: imageUrl, completed: nil )
-        
     }
 }

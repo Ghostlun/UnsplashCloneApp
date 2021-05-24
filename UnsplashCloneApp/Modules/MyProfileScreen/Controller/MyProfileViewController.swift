@@ -43,7 +43,6 @@ class MyProfileViewController: UIViewController {
         self.userLabel.text = "\(userData.lastName) \(userData.firstName)"
     }
     
-    
     @IBAction private func segmentedValueChanged() {
         print("\(profileSegmentedControl.selectedSegmentIndex)")
         self.tableView.reloadData()

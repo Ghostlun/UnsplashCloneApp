@@ -20,9 +20,8 @@ class DetailsViewModel {
         self.viewController = viewController
     }
     
-    
     func imageUrlSomething() -> URL {
-        return detailsData.mainImage
+         detailsData.mainImage
     }
     
     func downloadImage() {
@@ -40,7 +39,7 @@ class DetailsViewModel {
     }
 
     func uploadLikePictureInformation() {
-        let likeImage: [String: Any] = ["imageUrl": detailsData.shareUrlAddress, "provider":  detailsData.provider]
+        let likeImage: [String: Any] = ["imageUrl": detailsData.shareUrlAddress, "provider": detailsData.provider]
         let uid = Auth.auth().currentUser?.uid ?? "No data"
         self.db.collection("users").document(uid).updateData(["likePicture": FieldValue.arrayUnion([likeImage])])
     }

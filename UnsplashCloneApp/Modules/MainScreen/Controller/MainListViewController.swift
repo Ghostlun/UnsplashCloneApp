@@ -8,7 +8,7 @@
 import UIKit
 
 class MainListViewController: UIViewController {
-        
+    
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             self.tableView.delegate = self
@@ -53,25 +53,23 @@ extension MainListViewController: UITableViewDelegate, UITableViewDataSource, UI
         let sendData = self.mainListViewModel.photo(at: indexPath.row)
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SplashTableViewCell.reuseIdentifier, for: indexPath) as? SplashTableViewCell else { return UITableViewCell() }
-    
+        
         cell.configure(configurator: sendData)
         return cell
     }
     
-   
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         let detailData = self.mainListViewModel.photo(at: indexPath.row)
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let detailViewController = storyboard.instantiateViewController(identifier: DetailsViewController.reuseIdentifier) as? DetailsViewController
-         else { return }
+        else { return }
         detailViewController.detailsData = detailData
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let header = tableView.tableHeaderView as? StretchingHeaderView else { fatalError("Can't find header") }
+        guard let header = tableView.tableHeaderView as? StretchingHeaderView else { return }
         header.whenScrollDid(scrollView: scrollView)
     }
 }
@@ -92,9 +90,15 @@ extension MainListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let category = mainListViewModel.collectionViewDataSource[indexPath.row]
-        print("Did Select \(category)")
-        mainListViewModel.fetchDataByCategory(category: category)
+        
+        if indexPath.row == 0 {
+            setupHeader()
+            mainListViewModel.fetchInitialData()
+        } else {
+            tableView.tableHeaderView = nil
+            let category = mainListViewModel.collectionViewDataSource[indexPath.row]
+            mainListViewModel.fetchDataByCategory(category: category)
+        }
     }
 }
 

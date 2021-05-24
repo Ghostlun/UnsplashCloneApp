@@ -46,15 +46,17 @@ class MyProfileViewModel {
         }
     }
     
-    
     func numberOfRows(index: Int) -> Int {
         switch index {
         case 0:
             return uploadImageDataSource.count
+            
         case 1:
             return likeImageDataSource.count
+            
         case 2:
             return 0
+            
         default:
             return 0
         }

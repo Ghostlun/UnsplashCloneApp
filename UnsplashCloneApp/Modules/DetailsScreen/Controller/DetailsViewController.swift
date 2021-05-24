@@ -20,7 +20,6 @@ class DetailsViewController: UIViewController, CellReusable {
         guard let detailsData = detailsData else { return }
         self.detailsViewModel = DetailsViewModel(detailsData: detailsData, viewController: self)
         configure()
-
     }
     
     func configure() {

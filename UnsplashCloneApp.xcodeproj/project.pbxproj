@@ -68,8 +68,8 @@
 		D9CA3ECD2655854D00DB4749 /* ProfileLikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CA3ECC2655854D00DB4749 /* ProfileLikeTableViewCell.xib */; };
 		D9CA3ED12658123600DB4749 /* DetailsInfoSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA3ED02658123600DB4749 /* DetailsInfoSubViewController.swift */; };
 		D9CA3ED6265826BD00DB4749 /* DetailsInfoSubView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CA3ED5265826BD00DB4749 /* DetailsInfoSubView.storyboard */; };
-		D9CA3EDF26584D3600DB4749 /* StretcyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA3EDE26584D3600DB4749 /* StretcyHeaderView.swift */; };
-		D9CA3EE02659AC9200DB4749 /* 1.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CA3EE22659AC9200DB4749 /* 1.xib */; };
+		D9CA3EDF26584D3600DB4749 /* StretchingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA3EDE26584D3600DB4749 /* StretchingHeaderView.swift */; };
+		D9CA3EE4265C07F800DB4749 /* mainScreen1.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9CA3EE3265C07F700DB4749 /* mainScreen1.gif */; };
 		D9DBFAAC26459C2D00BFB61B /* CellReusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFAAB26459C2D00BFB61B /* CellReusable+Extension.swift */; };
 		D9DBFAAD26459CF200BFB61B /* SplashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3646B264588460047707E /* SplashTableViewCell.swift */; };
 		D9DBFAAE2645A70000BFB61B /* SplashTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B3646A264588460047707E /* SplashTableViewCell.xib */; };
@@ -171,8 +171,8 @@
 		D9CA3ECC2655854D00DB4749 /* ProfileLikeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileLikeTableViewCell.xib; sourceTree = "<group>"; };
 		D9CA3ED02658123600DB4749 /* DetailsInfoSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInfoSubViewController.swift; sourceTree = "<group>"; };
 		D9CA3ED5265826BD00DB4749 /* DetailsInfoSubView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsInfoSubView.storyboard; sourceTree = "<group>"; };
-		D9CA3EDE26584D3600DB4749 /* StretcyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretcyHeaderView.swift; sourceTree = "<group>"; };
-		D9CA3EE12659AC9200DB4749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/1.xib; sourceTree = "<group>"; };
+		D9CA3EDE26584D3600DB4749 /* StretchingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchingHeaderView.swift; sourceTree = "<group>"; };
+		D9CA3EE3265C07F700DB4749 /* mainScreen1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mainScreen1.gif; sourceTree = "<group>"; };
 		D9DBFAAB26459C2D00BFB61B /* CellReusable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CellReusable+Extension.swift"; sourceTree = "<group>"; };
 		D9DBFAB02645B63000BFB61B /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D9DBFAB82645D10E00BFB61B /* CollectionViewCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCategoryCell.swift; sourceTree = "<group>"; };
@@ -414,6 +414,7 @@
 				D97E0C68264E80100001EE39 /* searchScreen.gif */,
 				D97E0C64264E772F0001EE39 /* appstore.png */,
 				D97E0C55264E76340001EE39 /* mainScreen.png */,
+				D9CA3EE3265C07F700DB4749 /* mainScreen1.gif */,
 				D97E0C70264E820C0001EE39 /* detailsScreen.png */,
 				D97E0C4B264E76310001EE39 /* mainScreen1.png */,
 				D97E0C4A264E76310001EE39 /* loginScreen3.png */,
@@ -551,8 +552,7 @@
 		D9CA3ED72658403C00DB4749 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				D9CA3EE22659AC9200DB4749 /* 1.xib */,
-				D9CA3EDE26584D3600DB4749 /* StretcyHeaderView.swift */,
+				D9CA3EDE26584D3600DB4749 /* StretchingHeaderView.swift */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -891,6 +891,7 @@
 				D97E0C67264E793D0001EE39 /* mainScreen2.png in Resources */,
 				D97E0C65264E772F0001EE39 /* appstore.png in Resources */,
 				D97E0C5C264E76340001EE39 /* licenseScreen.png in Resources */,
+				D9CA3EE4265C07F800DB4749 /* mainScreen1.gif in Resources */,
 				D97E0C5F264E76340001EE39 /* loginScreen.png in Resources */,
 				D97E0C32264D77670001EE39 /* UsersTableViewCell.xib in Resources */,
 				D97E0C61264E76340001EE39 /* collectionScreen.png in Resources */,
@@ -916,7 +917,6 @@
 				D909C7A82642BA2500713750 /* Main.storyboard in Resources */,
 				D97E0C59264E76340001EE39 /* searchScreen1.png in Resources */,
 				D97E0C71264E820D0001EE39 /* detailsScreen.png in Resources */,
-				D9CA3EE02659AC9200DB4749 /* 1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,7 +977,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "    # if which swiftlint >/dev/null; then\n    # swiftlint\n    # else\n    # echo \"warning: SwiftLint not installed, download from  https://github.com/realm/SwiftLint\"\n   #  fi\n";
+			shellScript = "     if which swiftlint >/dev/null; then\n     swiftlint\n     else\n     echo \"warning: SwiftLint not installed, download from  https://github.com/realm/SwiftLint\"\n     fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1042,7 +1042,7 @@
 				D97E0C7A264F19240001EE39 /* FileHandler.swift in Sources */,
 				D9DBFB4C264C342600BFB61B /* ContactFunctionHandler.swift in Sources */,
 				D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */,
-				D9CA3EDF26584D3600DB4749 /* StretcyHeaderView.swift in Sources */,
+				D9CA3EDF26584D3600DB4749 /* StretchingHeaderView.swift in Sources */,
 				D9B3647F2645951D0047707E /* ParameterEncoder.swift in Sources */,
 				D9B364852645952F0047707E /* Router.swift in Sources */,
 				D9DBFB102649BDA200BFB61B /* SearchTableViewModel.swift in Sources */,
@@ -1066,14 +1066,6 @@
 				D909C7AC2642BA2700713750 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		D9CA3EE22659AC9200DB4749 /* 1.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9CA3EE12659AC9200DB4749 /* Base */,
-			);
-			name = 1.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
