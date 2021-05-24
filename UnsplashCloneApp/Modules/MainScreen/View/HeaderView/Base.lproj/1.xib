@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="MainTableHeaderCell" id="uhD-xg-Wtv" customClass="MainTableHeaderCell" customModule="UnsplashCloneApp" customModuleProvider="target">
+        <view contentMode="scaleToFill" restorationIdentifier="StretchingHeaderView" id="uhD-xg-Wtv" customClass="StretchingHeaderView" customModule="UnsplashCloneApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="197"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -28,9 +28,6 @@
                 <constraint firstItem="hkX-rK-ckC" firstAttribute="top" secondItem="uhD-xg-Wtv" secondAttribute="top" id="crr-LB-rs6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="mainImageView" destination="hkX-rK-ckC" id="hJf-D0-n6P"/>
-            </connections>
             <point key="canvasLocation" x="-20.289855072463769" y="-197.20982142857142"/>
         </view>
     </objects>

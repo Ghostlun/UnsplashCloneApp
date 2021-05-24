@@ -7,55 +7,83 @@
 
 import UIKit
 
-class StretcyHeaderView: UIView {
+class StretchingHeaderView: UIView, CellReusable {
     
-    let myImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    private var imageViewHeight = NSLayoutConstraint()
-    private var imageViewBottom = NSLayoutConstraint()
-    private var containerView = UIView()
-    private var containerViewHeight = NSLayoutConstraint()
-    
+    var imageViewHeight = NSLayoutConstraint()
+    var imageViewBottom = NSLayoutConstraint()
+    var containerView: UIView!
+    var imageView: UIImageView!
+    var textLabel: UILabel!
+    var containerViewHeight = NSLayoutConstraint()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        createView()
+        createViews()
         setViewConstraints()
+        setLabelSubView()
+    
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
-    func createView() {
-        addSubview(containerView)
-        containerView.addSubview(myImageView)
+    func createViews() {
+        // Container View
+        containerView = UIView()
+        self.addSubview(containerView)
+        // ImageView for background
+        imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        containerView.addSubview(imageView)
+      
     }
+    
+    func setLabelSubView() {
+        let frame = CGRect(x: 0, y: self.containerView.frame.midY, width: self.frame.width, height: self.frame.height)
+        
+        let titleLabel = UILabel(frame: frame)
+        titleLabel.text = "Photos for everyone"
+        titleLabel.textColor = .white
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 25.0)
+        self.addSubview(titleLabel)
+        
+        let frame1 = CGRect(x: 0, y: 50, width:  self.frame.width, height:  self.frame.height)
+        let subtitleLabel = UILabel(frame: frame1)
+        subtitleLabel.text = "Photos of Day by Pawel Czerwinski"
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.textColor = .white
+        subtitleLabel.font = UIFont.boldSystemFont(ofSize: 12.0)
+        self.addSubview(subtitleLabel)
+    }
+    
+    
     
     func setViewConstraints() {
+        // UIView Constraints
         NSLayoutConstraint.activate([
-                                        widthAnchor.constraint(equalTo: containerView.widthAnchor),
-                                        centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-                                        heightAnchor.constraint(equalTo: containerView.heightAnchor)])
+            self.widthAnchor.constraint(equalTo: containerView.widthAnchor),
+            self.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            self.heightAnchor.constraint(equalTo: containerView.heightAnchor)
+        ])
         
+        // Container View Constraints
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.widthAnchor.constraint(equalTo: myImageView.widthAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
         containerViewHeight = containerView.heightAnchor.constraint(equalTo: self.heightAnchor)
         containerViewHeight.isActive = true
         
-        myImageView.translatesAutoresizingMaskIntoConstraints = false
-        imageViewHeight = myImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        imageViewHeight.isActive = true
-        imageViewBottom = myImageView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
+        // ImageView Constraints
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageViewBottom = imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        imageViewBottom.isActive = true
+        imageViewHeight = imageView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
         imageViewHeight.isActive = true
     }
     
-    
-    public func scrollViewDidScroll(scrollView: UIScrollView) {
+    func whenScrollDid(scrollView: UIScrollView) {
         containerViewHeight.constant = scrollView.contentInset.top
         let offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
         containerView.clipsToBounds = offsetY <= 0

@@ -14,7 +14,6 @@ class MainListViewController: UIViewController {
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.register(UINib(nibName: SplashTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SplashTableViewCell.reuseIdentifier)
-            self.tableView.register(UINib(nibName: TitleTableCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: TitleTableCell.reuseIdentifier)
         }
     }
     
@@ -34,10 +33,17 @@ class MainListViewController: UIViewController {
         self.title = "Unsplash"
         self.mainListViewModel.fetchInitialData()
         self.mainListViewModel.openFirstTimeView(isNotFirst: userDefault.bool(forKey: "isNotFirst"))
+        setupHeader()
+    }
+    
+    private func setupHeader() {
+        let header = StretchingHeaderView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 6))
+        header.imageView.image = UIImage(named: "picture.jpg") ?? UIImage()
+        tableView.tableHeaderView = header
     }
 }
 
-extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainListViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mainListViewModel.numberOfRows()
     }
@@ -52,19 +58,7 @@ extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        guard let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: MainTableHeaderCell.reuseIdentifier ) as? MainTableHeaderCell else { return UIView() }
-//        headerCell.configure(configurator: sendData)
-//        return headerCell
-        
-        let header = StretcyHeaderView(frame:(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)))
-        header.myImageView.image = UIImage(named: "headerImage")
-        return header
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        mainListViewModel.fetchInitialData()
-    }
+   
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
@@ -75,8 +69,10 @@ extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
         detailViewController.detailsData = detailData
         navigationController?.pushViewController(detailViewController, animated: true)
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        300
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let header = tableView.tableHeaderView as? StretchingHeaderView else { fatalError("Can't find header") }
+        header.whenScrollDid(scrollView: scrollView)
     }
 }
 
@@ -108,12 +104,5 @@ extension MainListViewController: MainViewModelProtocol {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-    }
-}
-
-extension MainListViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let header = tableView.headerView as? StretcyHeaderView else { return }
-        header.scrollViewDidScroll(scrollView: tableView)
     }
 }
