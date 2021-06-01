@@ -5,11 +5,16 @@
 //  Created by Yoonha Kim on 5/10/21.
 //
 
+import Hero
 import UIKit
 
 class DetailsViewController: UIViewController, CellReusable {
     
-    @IBOutlet private weak var mainImageView: UIImageView!
+    @IBOutlet private weak var mainImageView: UIImageView! {
+        didSet {
+            mainImageView.heroID = "updates"
+        }
+    }
   
     var detailsData: SplashCellViewModelProtocol?
     var detailsViewModel: DetailsViewModel?
@@ -49,5 +54,23 @@ class DetailsViewController: UIViewController, CellReusable {
     
     @IBAction private func openDetailsSubView() {
         performSegue(withIdentifier: "openDetailsSubview", sender: nil)
+    }
+    
+    @IBAction private func handlePan(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            hero.dismissViewController()
+            
+        case .changed:
+            let transition = sender.translation(in: nil)
+            let progress = transition.y / 2 / view.bounds.height
+            let currentPos = CGPoint(x: transition.x + self.mainImageView.center.x, y: transition.y + self.mainImageView.center.y)
+            Hero.shared.apply(modifiers: [.position(currentPos)], to: mainImageView)
+            Hero.shared.update(progress)
+            
+        default:
+            print("Call")
+            Hero.shared.finish()
+        }
     }
 }

@@ -40,7 +40,7 @@ class SearchViewModel {
     func userResult(at index: Int) -> UserTableCellViewModelProtocol {
         UserTableCellViewModel(userResult: userDataSource[index])
     }
-        
+    
     func numbersOfTableViewRows(type: Int) -> Int {
         switch type {
         case 0:

@@ -11,5 +11,6 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
-
+pod 'Hero'
+pod 'SQLite.swift', '~> 0.12.0'
 end

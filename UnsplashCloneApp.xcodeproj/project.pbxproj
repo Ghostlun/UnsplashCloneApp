@@ -70,6 +70,8 @@
 		D9CA3ED6265826BD00DB4749 /* DetailsInfoSubView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CA3ED5265826BD00DB4749 /* DetailsInfoSubView.storyboard */; };
 		D9CA3EDF26584D3600DB4749 /* StretchingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA3EDE26584D3600DB4749 /* StretchingHeaderView.swift */; };
 		D9CA3EE4265C07F800DB4749 /* mainScreen1.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9CA3EE3265C07F700DB4749 /* mainScreen1.gif */; };
+		D9CA3F70265D982F00DB4749 /* HistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA3F6E265D982E00DB4749 /* HistoryViewCell.swift */; };
+		D9CA3F71265D982F00DB4749 /* HistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CA3F6F265D982E00DB4749 /* HistoryViewCell.xib */; };
 		D9DBFAAC26459C2D00BFB61B /* CellReusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DBFAAB26459C2D00BFB61B /* CellReusable+Extension.swift */; };
 		D9DBFAAD26459CF200BFB61B /* SplashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3646B264588460047707E /* SplashTableViewCell.swift */; };
 		D9DBFAAE2645A70000BFB61B /* SplashTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B3646A264588460047707E /* SplashTableViewCell.xib */; };
@@ -173,6 +175,8 @@
 		D9CA3ED5265826BD00DB4749 /* DetailsInfoSubView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsInfoSubView.storyboard; sourceTree = "<group>"; };
 		D9CA3EDE26584D3600DB4749 /* StretchingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchingHeaderView.swift; sourceTree = "<group>"; };
 		D9CA3EE3265C07F700DB4749 /* mainScreen1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mainScreen1.gif; sourceTree = "<group>"; };
+		D9CA3F6E265D982E00DB4749 /* HistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewCell.swift; sourceTree = "<group>"; };
+		D9CA3F6F265D982E00DB4749 /* HistoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewCell.xib; sourceTree = "<group>"; };
 		D9DBFAAB26459C2D00BFB61B /* CellReusable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CellReusable+Extension.swift"; sourceTree = "<group>"; };
 		D9DBFAB02645B63000BFB61B /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D9DBFAB82645D10E00BFB61B /* CollectionViewCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCategoryCell.swift; sourceTree = "<group>"; };
@@ -557,6 +561,15 @@
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
+		D9CA3F6D265D980C00DB4749 /* HistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				D9CA3F6E265D982E00DB4749 /* HistoryViewCell.swift */,
+				D9CA3F6F265D982E00DB4749 /* HistoryViewCell.xib */,
+			);
+			path = HistoryCell;
+			sourceTree = "<group>";
+		};
 		D9DBFAB72645D0FB00BFB61B /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +601,7 @@
 		D9DBFB052649956D00BFB61B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D9CA3F6D265D980C00DB4749 /* HistoryCell */,
 				D97E0C2A264D76E90001EE39 /* UsersCell */,
 				D97E0C28264D76920001EE39 /* CollectionsCell */,
 			);
@@ -899,6 +913,7 @@
 				D97E0C7D264F1DE30001EE39 /* dataSet1.png in Resources */,
 				D97E0C5B264E76340001EE39 /* collectionScreen1.png in Resources */,
 				D97E0C60264E76340001EE39 /* searchScreen.png in Resources */,
+				D9CA3F71265D982F00DB4749 /* HistoryViewCell.xib in Resources */,
 				D97E0C57264E76340001EE39 /* loginScreen3.png in Resources */,
 				D9DBFB20264A5A7200BFB61B /* GoogleService-Info.plist in Resources */,
 				D97E0C6D264E80120001EE39 /* mainScreen.gif in Resources */,
@@ -1040,6 +1055,7 @@
 				D97E0C40264DC4D30001EE39 /* LoginViewModel.swift in Sources */,
 				D9DBFAC62649820700BFB61B /* SearchViewController.swift in Sources */,
 				D97E0C7A264F19240001EE39 /* FileHandler.swift in Sources */,
+				D9CA3F70265D982F00DB4749 /* HistoryViewCell.swift in Sources */,
 				D9DBFB4C264C342600BFB61B /* ContactFunctionHandler.swift in Sources */,
 				D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */,
 				D9CA3EDF26584D3600DB4749 /* StretchingHeaderView.swift in Sources */,
