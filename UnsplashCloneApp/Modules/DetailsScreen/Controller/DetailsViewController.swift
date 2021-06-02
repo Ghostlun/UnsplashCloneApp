@@ -15,7 +15,7 @@ class DetailsViewController: UIViewController, CellReusable {
             mainImageView.heroID = "updates"
         }
     }
-  
+    
     var detailsData: SplashCellViewModelProtocol?
     var detailsViewModel: DetailsViewModel?
     
@@ -57,20 +57,24 @@ class DetailsViewController: UIViewController, CellReusable {
     }
     
     @IBAction private func handlePan(_ sender: UIPanGestureRecognizer) {
+        let transition = sender.translation(in: nil)
+        let progress = transition.y / 2 / view.bounds.height
+        
         switch sender.state {
         case .began:
             hero.dismissViewController()
             
         case .changed:
-            let transition = sender.translation(in: nil)
-            let progress = transition.y / 2 / view.bounds.height
-            let currentPos = CGPoint(x: transition.x + self.mainImageView.center.x, y: transition.y + self.mainImageView.center.y)
-            Hero.shared.apply(modifiers: [.position(currentPos)], to: mainImageView)
             Hero.shared.update(progress)
+            let currentPos = CGPoint(x: transition.x + mainImageView.center.x, y: transition.y + mainImageView.center.y)
+            Hero.shared.apply(modifiers: [.position(currentPos)], to: mainImageView)
             
         default:
-            print("Call")
-            Hero.shared.finish()
+            if progress + sender.velocity(in: nil).y / view.bounds.height > 0.2 {
+                Hero.shared.finish()
+            } else {
+                Hero.shared.cancel()
+            }
         }
     }
 }

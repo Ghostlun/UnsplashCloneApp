@@ -17,7 +17,6 @@ class SearchViewModel {
     private var dataSource: [PhotoResult]
     private var collectionDataSource: [CollectionResult]
     private var userDataSource: [UserResult]
-    
     private weak var delegate: SearchViewModelProtocol?
     
     private let router = Router<SearchApi>()

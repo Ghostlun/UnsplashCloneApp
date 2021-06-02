@@ -23,6 +23,7 @@ class SearchViewController: UIViewController {
             self.tableView.register(UINib(nibName: SplashTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SplashTableViewCell.reuseIdentifier)
             self.tableView.register(UINib(nibName: CollectionTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CollectionTableViewCell.reuseIdentifier)
             self.tableView.register(UINib(nibName: UsersTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: UsersTableViewCell.reuseIdentifier)
+            self.tableView.register(UINib(nibName: HistoryHeaderView.reuseIdentifier, bundle: nil), forHeaderFooterViewReuseIdentifier: HistoryHeaderView.reuseIdentifier)
         }
     }
     
@@ -49,6 +50,7 @@ extension SearchViewController: UISearchBarDelegate {
         userDefault.setValue(historyDataSource, forKey: "History")
         searchViewModel.fetchItem(keyword: searchBar.text ?? "", type: searchBar.selectedScopeButtonIndex )
         isMain = false
+        tableView.tableHeaderView?.frame = CGRect.zero
         tableView.reloadData()
     }
     
@@ -72,10 +74,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         if isMain {
             let history = historyDataSource?[indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryViewCell.reuseIdentifier, for: indexPath) as? HistoryViewCell else { return UITableViewCell() }
-            cell.configure(history: history ?? "")
+            cell.configure(history: history ?? "" )
             return cell
         }
-    
+        
         switch searchBar.selectedScopeButtonIndex {
         case 0:
             let photoResult = searchViewModel.photoResult(at: indexPath.row)
@@ -102,7 +104,27 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isMain == false {
         navigationController?.pushViewController(searchViewModel.openDetailsScreen(indexPath), animated: true)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        tableView.reloadInputViews()
+        if isMain == false {
+            tableView.tableHeaderView = nil
+            tableView.tableHeaderView = UIView()
+            return nil
+        }
+        
+        guard let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryHeaderView.reuseIdentifier) as? HistoryHeaderView else { return UIView() }
+        headerCell.configure()
+        return headerCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        50
     }
 }
 

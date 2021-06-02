@@ -19,19 +19,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rws-HV-z1s">
                                 <rect key="frame" x="0.0" y="524" width="414" height="338"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3T-t3-7qD">
-                                        <rect key="frame" x="0.0" y="8" width="414" height="31.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YH-Ft-nNL">
-                                        <rect key="frame" x="8" y="4" width="52" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="Close"/>
+                                        <rect key="frame" x="8" y="4" width="41" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="cancelButtonClicked" destination="Duk-0m-bu3" eventType="touchUpInside" id="zj7-MP-rMO"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giq-6P-toB">
+                                        <rect key="frame" x="192" y="4" width="30" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Info">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4fi-3n-DtG">
                                         <rect key="frame" x="8" y="117" width="80" height="38"/>
@@ -194,19 +197,18 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="OpK-9t-XiO" firstAttribute="top" secondItem="bSU-fk-y6l" secondAttribute="bottom" constant="38" id="4ME-6E-TSQ"/>
-                                    <constraint firstItem="a3T-t3-7qD" firstAttribute="leading" secondItem="Rws-HV-z1s" secondAttribute="leading" id="4d1-6J-lk0"/>
                                     <constraint firstItem="4fi-3n-DtG" firstAttribute="leading" secondItem="Rws-HV-z1s" secondAttribute="leading" constant="8" id="8xp-gs-7mT"/>
                                     <constraint firstItem="9YH-Ft-nNL" firstAttribute="leading" secondItem="Rws-HV-z1s" secondAttribute="leading" constant="8" id="9Xt-sd-3ex"/>
                                     <constraint firstItem="bB8-3P-J2a" firstAttribute="centerX" secondItem="Rws-HV-z1s" secondAttribute="centerX" constant="60" id="BtA-Xm-8Mf"/>
                                     <constraint firstAttribute="bottom" secondItem="bB8-3P-J2a" secondAttribute="bottom" constant="34.5" id="I63-AT-f64"/>
+                                    <constraint firstItem="giq-6P-toB" firstAttribute="centerY" secondItem="9YH-Ft-nNL" secondAttribute="centerY" id="JfB-bG-hGy"/>
                                     <constraint firstItem="bSU-fk-y6l" firstAttribute="top" secondItem="4fi-3n-DtG" secondAttribute="bottom" constant="37" id="L85-T3-rCP"/>
-                                    <constraint firstItem="icv-kZ-Qf1" firstAttribute="top" secondItem="a3T-t3-7qD" secondAttribute="bottom" constant="10" id="P2H-vQ-ZTc"/>
-                                    <constraint firstItem="a3T-t3-7qD" firstAttribute="top" secondItem="Rws-HV-z1s" secondAttribute="top" constant="8" id="SSo-zS-x2p"/>
+                                    <constraint firstItem="RZ3-2J-24u" firstAttribute="top" secondItem="icv-kZ-Qf1" secondAttribute="top" id="MYC-Uh-Lly"/>
+                                    <constraint firstItem="giq-6P-toB" firstAttribute="centerX" secondItem="Rws-HV-z1s" secondAttribute="centerX" id="Meu-su-6qG"/>
                                     <constraint firstItem="4fi-3n-DtG" firstAttribute="top" secondItem="icv-kZ-Qf1" secondAttribute="bottom" constant="29.5" id="Zvu-5B-qE0"/>
                                     <constraint firstItem="OpK-9t-XiO" firstAttribute="leading" secondItem="Rws-HV-z1s" secondAttribute="leading" constant="8" id="cX1-13-se7"/>
                                     <constraint firstItem="9YH-Ft-nNL" firstAttribute="top" secondItem="Rws-HV-z1s" secondAttribute="top" constant="4" id="heP-O0-Gp9"/>
-                                    <constraint firstAttribute="trailing" secondItem="a3T-t3-7qD" secondAttribute="trailing" id="lvn-P2-I6D"/>
-                                    <constraint firstItem="bB8-3P-J2a" firstAttribute="top" secondItem="a3T-t3-7qD" secondAttribute="bottom" constant="10" id="oRj-Bc-5R3"/>
+                                    <constraint firstItem="iNz-uA-eA1" firstAttribute="leading" secondItem="4fi-3n-DtG" secondAttribute="trailing" constant="137" id="rOz-Kv-R57"/>
                                     <constraint firstItem="bSU-fk-y6l" firstAttribute="leading" secondItem="Rws-HV-z1s" secondAttribute="leading" constant="8" id="xoz-9x-RoA"/>
                                     <constraint firstAttribute="bottom" secondItem="OpK-9t-XiO" secondAttribute="bottom" constant="32" id="yEa-3j-5GD"/>
                                     <constraint firstItem="icv-kZ-Qf1" firstAttribute="leading" secondItem="Rws-HV-z1s" secondAttribute="leading" constant="8" id="ybh-JU-C0h"/>

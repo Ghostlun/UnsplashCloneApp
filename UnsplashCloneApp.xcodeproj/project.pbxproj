@@ -15,6 +15,8 @@
 		D909C7AA2642BA2700713750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D909C7A92642BA2700713750 /* Assets.xcassets */; };
 		D909C7AD2642BA2700713750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D909C7AB2642BA2700713750 /* LaunchScreen.storyboard */; };
 		D909C7BF2642F50600713750 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C7BE2642F50500713750 /* SplashModel.swift */; };
+		D93104492667D636006813EF /* HistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93104482667D636006813EF /* HistoryHeaderView.swift */; };
+		D931044B2667D6A2006813EF /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D931044A2667D6A2006813EF /* HistoryHeaderView.xib */; };
 		D97E0C27264CAAFA0001EE39 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C26264CAAFA0001EE39 /* RegisterViewModel.swift */; };
 		D97E0C2D264D774A0001EE39 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E0C2B264D774A0001EE39 /* CollectionTableViewCell.swift */; };
 		D97E0C2E264D774A0001EE39 /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97E0C2C264D774A0001EE39 /* CollectionTableViewCell.xib */; };
@@ -118,6 +120,8 @@
 		D909C7AC2642BA2700713750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D909C7AE2642BA2700713750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D909C7BE2642F50500713750 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
+		D93104482667D636006813EF /* HistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderView.swift; sourceTree = "<group>"; };
+		D931044A2667D6A2006813EF /* HistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
 		D97E0C26264CAAFA0001EE39 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		D97E0C2B264D774A0001EE39 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		D97E0C2C264D774A0001EE39 /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -361,6 +365,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D93104472667D520006813EF /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				D93104482667D636006813EF /* HistoryHeaderView.swift */,
+				D931044A2667D6A2006813EF /* HistoryHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		D97E0C25264CAADE0001EE39 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +614,7 @@
 		D9DBFB052649956D00BFB61B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D93104472667D520006813EF /* Header */,
 				D9CA3F6D265D980C00DB4749 /* HistoryCell */,
 				D97E0C2A264D76E90001EE39 /* UsersCell */,
 				D97E0C28264D76920001EE39 /* CollectionsCell */,
@@ -919,6 +933,7 @@
 				D97E0C6D264E80120001EE39 /* mainScreen.gif in Resources */,
 				D97E0C2E264D774A0001EE39 /* CollectionTableViewCell.xib in Resources */,
 				D9DBFAAE2645A70000BFB61B /* SplashTableViewCell.xib in Resources */,
+				D931044B2667D6A2006813EF /* HistoryHeaderView.xib in Resources */,
 				D97E0C6F264E80120001EE39 /* collectionScreen.gif in Resources */,
 				D97E0C5E264E76340001EE39 /* searchScreen2.png in Resources */,
 				D97E0C62264E76340001EE39 /* mainScreen.png in Resources */,
@@ -1055,6 +1070,7 @@
 				D97E0C40264DC4D30001EE39 /* LoginViewModel.swift in Sources */,
 				D9DBFAC62649820700BFB61B /* SearchViewController.swift in Sources */,
 				D97E0C7A264F19240001EE39 /* FileHandler.swift in Sources */,
+				D93104492667D636006813EF /* HistoryHeaderView.swift in Sources */,
 				D9CA3F70265D982F00DB4749 /* HistoryViewCell.swift in Sources */,
 				D9DBFB4C264C342600BFB61B /* ContactFunctionHandler.swift in Sources */,
 				D9B3647C264590E40047707E /* MainListViewModel.swift in Sources */,

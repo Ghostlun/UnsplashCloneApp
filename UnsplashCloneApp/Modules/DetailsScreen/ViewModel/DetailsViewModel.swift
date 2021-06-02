@@ -25,8 +25,7 @@ class DetailsViewModel {
     }
     
     func downloadImage() {
-        
-        if  let data = try? Data(contentsOf: detailsData.mainImage),
+        if let data = try? Data(contentsOf: detailsData.mainImage),
             let image = UIImage(data: data) {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             }
